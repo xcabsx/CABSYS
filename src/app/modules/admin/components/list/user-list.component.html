@@ -1,0 +1,38 @@
+<div class="col-lg-12">
+<h3>
+  {{title}}
+</h3>
+  <a [routerLink]="['../user-edit',1]">informacion</a>
+  <table class="table table-hover">
+    <thead class="thead-default">
+    <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td>
+      <td>
+        <button class="btn btn-sm btn-success">
+          <span class="glyphicon glyphicon-eye-open"></span>
+          Ver Detalle
+        </button>
+
+        <a class="btn btn-sm btn-primary" [routerLink]="['../edit',user.id]">
+          <span class="glyphicon glyphicon-pencil"></span>
+          Editar
+        </a>
+        <button class="btn btn-sm btn-danger">
+          <span class="glyphicon glyphicon-remove-sign"></span>
+          Eliminar
+        </button>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+<router-outlet></router-outlet>

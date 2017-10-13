@@ -1,0 +1,45 @@
+<div class="col-lg-12">
+  <h2>{{title}}
+    <a *ngIf="!editar" (click)="onEditar(editForm)" class="btn btn-primary btn-sm"> Editar</a>
+    <a *ngIf="editar" (click)="onEditar(editForm)" class="btn btn-warning btn-sm"> Cancelar</a>
+  </h2>
+
+</div>
+<div class="col-lg-6">
+  <form #editForm="ngForm" (ngSubmit)="onSubmit()" >
+    <p>
+      <label for="txtName">Nombre</label>
+      <input id="txtName" name="name" class="form-control" type="text" #name="ngModel" [(ngModel)]="user.name" required [disabled]="!editar"/>
+      <span class="alert-danger" *ngIf="!name.valid && name.touched && editar"> Debe completar el Nombre</span>
+    </p>
+    <p>
+      <label for="txtApellido">Apellido</label>
+      <input id="txtApellido" name="surname" class="form-control" type="text" #surname="ngModel" [(ngModel)]="user.surname" required [disabled]="!editar"/>
+      <span class="alert-danger" *ngIf="!surname.valid && surname.touched && editar"> Debe completar el Apellido</span>
+    </p>
+    <p>
+      <label for="txtEmail">Correo Electronico</label>
+      <input id="txtEmail" name="email" class="form-control" type="text" #email="ngModel" [(ngModel)]="user.email" required [disabled]="!editar"/>
+      <span class="alert-danger" *ngIf="!email.valid && email.touched && editar"> Debe completar el Correo Electronico</span>
+    </p>
+    <p>
+      <label for="txtRol">Rol</label>
+      <input id="txtRol" name="rol" class="form-control" type="text" #rol="ngModel" [(ngModel)]="user.role" [disabled]="!editar"/>
+      <span class="alert-danger" *ngIf="!rol.valid && rol.touched && editar"> Debe completar el Rol</span>
+    </p>
+    <p>
+      <label for="txtRol1">Contraseña</label>
+      <input id="txtRol1" name="password" class="form-control" type="password" #password="ngModel" [(ngModel)]="user.password" [disabled]="!editar"/>
+      <span class="alert-danger" *ngIf="!password.valid && password.touched && editar"> Debe completar el Password</span>
+    </p>
+    <input type="submit" class="btn btn-success" value="Guardar cambios" [disabled]="!editForm.form.valid">
+  </form>
+  <div *ngIf="status=='success'" class="aler alert-success">
+    Se han Guardado los cambios Correctamente!.
+  </div>
+  <div *ngIf="status=='error'" class="aler alert-danger">
+    Se ha Producido un error! intente nuevamente.
+  </div>
+
+</div>
+

@@ -1,0 +1,34 @@
+<div class="col-md-3">
+  <h4>{{title}}</h4>
+
+   <nav id="sidebar">
+     <ul class="list-unstyled components">
+        <li >
+          <a href="#userSubmenu" data-toggle="collapse" aria-expanded="false" [routerLinkActive]="['active']">Usuarios</a>
+          <ul class="collapse list-unstyled" id="userSubmenu">
+            <li><a [routerLink]="['listado-usuarios']" [routerLinkActive]="['activado']">Lista de Usuarios</a></li>
+            <li><a [routerLink]="['crear-usuario']" [routerLinkActive]="['activado']">Nuevo Usuario</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#RolSubmenu" data-toggle="collapse" aria-expanded="false">Roles</a>
+          <ul class="collapse list-unstyled" id="RolSubmenu">
+            <li><a [routerLink]="['listado']" [routerLinkActive]="['activado']">Lista de Roles</a></li>
+            <li><a [routerLink]="['crear-rol']" [routerLinkActive]="['activado']">Crear Rol</a></li>
+          </ul>
+        </li>
+       <li>
+         <a href="#PermisosSubmenu" data-toggle="collapse" aria-expanded="false">Permisos</a>
+         <ul class="collapse list-unstyled" id="PermisosSubmenu">
+           <li><a [routerLink]="['perm-listado']" [routerLinkActive]="['activado']">Lista de Permisos</a></li>
+           <li><a [routerLink]="['crear-perm']" [routerLinkActive]="['activado']">Crear Permiso</a></li>
+         </ul>
+       </li>
+
+      </ul>
+
+    </nav>
+</div>
+<div class="col-md-9">
+   <router-outlet ></router-outlet>
+</div>

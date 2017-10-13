@@ -1,0 +1,106 @@
+<header id="header" xmlns="" xmlns="" xmlns="" xmlns="">
+  <div class="navbar navbar-default " style="margin-top: 10px">
+    <div class="navbar-header ">
+      <!--boton de desplegar menu responsive-->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#menu" >
+        <span class="sr-only">toggle</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" [routerLink]="['/']">
+        <img src="/../assets/images/terry.png"  id="logo">
+      </a>
+      <!-- logo-->
+
+    </div>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="nav navbar-nav">
+        <li>
+          <a [routerLink]="['/inicio']"  [routerLinkActive]="['active']">
+            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+            Home
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/animals']" [routerLinkActive]="['active']"  >
+            <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+            Productos
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/keepers']" [routerLinkActive]="['active']">
+            <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
+            Servicios
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/contacto']" [routerLinkActive]="['active']" >
+            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+            Contacto
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/tienda']" [routerLinkActive]="['active']" >
+            <span class="glyphicon glyphicon-gift" aria-hidden="true"></span>
+            Tienda
+          </a>
+        </li>
+
+        <li>
+          <a [routerLink]="['/new-task']" *ngIf="identity && identity.sub" >
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            Crear Tarea
+          </a>
+        </li>
+
+      </ul>
+      <ul>
+
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right" *ngIf="!identity">
+        <li>
+          <a [routerLink]="['/registro']" [routerLinkActive]="['active']" ><span class="glyphicon glyphicon-user"></span>Registro</a>
+        </li>
+        <li>
+          <a [routerLink]="['/login']" [routerLinkActive]="['active']" ><span class="glyphicon glyphicon-log-in"></span> Login</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" *ngIf="identity">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            {{identity.name}} <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+
+              <a [routerLink]="['/user-edit']"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Mis Datos</a>
+            </li>
+            <li>
+              <a [routerLink]="['/admin-panel']"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Administrar</a>
+            </li>
+
+            <li>
+              <a class="pointer" (click)="logout()"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Salir</a>
+            </li>
+
+          </ul>
+        </li>
+        <!--<li>
+          <a [routerLink]="['/user-edit']" *ngIf="identityMean && identityMean._id">
+            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+            Ajustes
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/login',1]" *ngIf="identityMean && identityMean._id" >
+            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+            Salir
+          </a>
+        </li>-->
+      </ul>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,33 @@
+{{title}}
+<div class="col-md-12">
+  <div class="alert alert-success" *ngIf="status=='success'">
+    Se han guardado los cambios!!! Logeate desde <a [routerLink]="['/login']">aqui!</a>.
+  </div>
+  <div class="alert alert-danger" *ngIf="status=='Error'">
+    Error al Modificar los datos del usuario!
+  </div>
+
+  <form #updateForm="ngForm" (ngSubmit)="onSubmitMean()" class="col-md-7 no-padding">
+    <p>
+      <label name=""> Nombre </label>
+      <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="user.name" required/>
+      <span *ngIf="!name.valid && name.touched">el nombre es obligatorio</span>
+    </p>
+    <p>
+      <label name=""> apellido </label>
+        <input type="text" class="form-control" name="surname" #surname="ngModel" [(ngModel)]="user.surname" required/>
+      <span *ngIf="!surname.valid && surname.touched">el apellido es obligatorio</span>
+    </p>
+   <p>
+      <label >Email </label>
+      <input type="text" class="form-control" name="email" #email="ngModel" [(ngModel)]="user.email" required/>
+      <span *ngIf="!email.valid && email.touched">el role es obligatorio</span>
+    </p>
+    <p>
+      <label name=""> Contraseña </label>
+      <input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password" />
+      <span *ngIf="!password.valid && password.touched">La contraseña es obligatoria</span>
+    </p>
+    <input type="submit" class="btn btn-md btn-success" value="{{title}}" [disabled]="!updateForm.valid"/>
+  </form>
+</div>

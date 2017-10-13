@@ -1,0 +1,24 @@
+<div class="col-md-12">
+  <h3>{{title}}</h3>
+
+  <div class="alert alert-success" *ngIf="status=='success'">
+    Se ha Agregado correctamente el Rol! Puede ver la lista desde <a [routerLink]="['/listado-usuarios']">aqui!</a>.
+  </div>
+
+  <div class="alert alert-danger" *ngIf="status=='Error'">
+    Error al crear el Rol!
+  </div>
+
+ <form #registerForm="ngForm" (ngSubmit)="onSubmit(); registerForm.reset();" class="col-md-7 no-padding">
+  <p>
+    <label>Descripcion</label>
+    <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="rol.descRol" required />
+    <span *ngIf="!name.valid && name.touched"> Ingrese un Nombre </span>
+  </p>
+   <p>
+
+   <input type="submit" value="Registrarse" class="btn btn-success" [disabled]="!registerForm.form.valid" />
+
+ </form>
+</div>
+

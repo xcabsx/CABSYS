@@ -1,0 +1,28 @@
+<h3>
+  {{title}}
+</h3>
+<form #updateForm="ngForm" (ngSubmit)="onSubmit()" class="col-md-7 no-padding">
+  <p>
+    <label name=""> Nombre </label>
+    <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="user.name" required/>
+    <span *ngIf="!name.valid && name.touched">el nombre es obligatorio</span>
+  </p>
+  <p>
+    <label name=""> apellido </label>
+    <input type="text" class="form-control" name="surname" #surname="ngModel" [(ngModel)]="user.surname" required/>
+    <span *ngIf="!surname.valid && surname.touched">el apellido es obligatorio</span>
+  </p>
+  <p>
+    <label >Email </label>
+    <input type="text" class="form-control" name="email" #email="ngModel" [(ngModel)]="user.email" required/>
+    <span *ngIf="!email.valid && email.touched">el role es obligatorio</span>
+  </p>
+
+  <button class="btn btn-success" type="submit">pepe</button>
+
+
+</form>
+
+
+
+
