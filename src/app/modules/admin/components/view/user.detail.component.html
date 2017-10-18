@@ -1,0 +1,59 @@
+<div class="loader" *ngIf="loadingU=='show'">
+  <img src="../../../../../assets/images/gearxs.gif" />
+</div>
+<div class="col-lg-12" *ngIf="user1">
+<h3 class="text-center">Datos de usuario</h3>
+
+<div class="alert alert-info col-lg-12">
+
+  <p>
+    <strong>Nombre:</strong> {{user1.name}}
+  </p>
+  <p>
+    <strong>Apellido:</strong> {{user1.surname}}
+  </p>
+  <p>
+    <strong>Email:</strong> {{user1.email}}
+  </p>
+
+</div>
+
+</div>
+<div class="loader" *ngIf="loadingR=='show'">
+  <img src="../../../../../assets/images/gearxs.gif" />
+</div>
+<div class="alert " *ngIf="roles">
+  <p>Roles</p>
+  <table class="table table-hover">
+    <thead class="thead-default">
+    <tr>
+      <th>Rol</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let rol of roles">
+      <td>{{rol.descRol}}</td>
+      <td>{{rol.estado}}</td>
+      <td>
+        <a class="btn btn-sm btn-success" [routerLink]="['../../permiso-list',rol.rolId]">
+          <span class="glyphicon glyphicon-eye-open" ></span>
+          Ver Permisos
+        </a>
+        <button class="btn btn-sm btn-danger">
+          <span class="glyphicon glyphicon-remove-sign"></span>
+          Quitar Rol
+        </button>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+
+</div>
+<button class="btn btn-success btn-md " (click)="volver()"> Volver</button>
+
+
+
+

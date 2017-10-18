@@ -49,7 +49,25 @@ export class RoleService {
     return this._http.post(url , params , {headers: headers}).map(res => res.json());
 
 
-  }/*
+  }
+  getPermisosxRol(token, id) {
+    const params = 'authorization=' + token;
+    const headers = new Headers({'Content-Type' : 'application/x-www-form-urlencoded'});
+    return this._http.post(this.url + '/perm/PxR/' + id, params , {headers: headers}).map(res => res.json());
+  }
+
+  getRolessxusuario(token, id) {
+    const params = 'authorization=' + token;
+    const headers = new Headers({'Content-Type' : 'application/x-www-form-urlencoded'});
+    return this._http.post(this.url + '/perm/RxU/' + id, params , {headers: headers}).map(res => res.json());
+  }
+
+  deshabilitarRol(token, id) {
+    const params = 'authorization=' + token;
+    const headers = new Headers({'Content-Type' : 'application/x-www-form-urlencoded'});
+    return this._http.post(this.url + '/perm/DelRol/' + id, params , {headers: headers}).map(res => res.json());
+  }
+  /*
   deleteTask(token, id) {
     const params = 'authorization=' + token;
     const headers = new Headers({'Content-Type' : 'application/x-www-form-urlencoded'});

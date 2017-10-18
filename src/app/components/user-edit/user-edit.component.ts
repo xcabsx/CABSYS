@@ -57,12 +57,8 @@ export class UserEditComponent implements OnInit {
     if (this.editar) {
       this.editar = false;
       this.user.password = '';
-      console.log('if');
-
-
     }else {
       this.editar = true;
-      console.log('else');
     }
 
 

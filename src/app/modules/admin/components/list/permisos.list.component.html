@@ -1,0 +1,33 @@
+
+<h3>
+  {{title}} {{rolDescripcion}}
+</h3>
+<div *ngIf="permisos">
+<table class="table table-bordered table-hover">
+  <thead class="thead-default">
+  <tr>
+    <th>id</th>
+    <th>Permiso</th>
+    <th>Descrici&oacute;n</th>
+    <th>Estado</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let perm of permisos">
+    <td>{{perm.id}}</td>
+    <td>{{perm.permiso}}</td>
+    <td>descripcion de permiso </td>
+    <td>{{perm.estado}}</td>
+  </tr>
+
+  </tbody>
+
+</table>
+  <button class="btn btn-md btn-success" (click)="volver()"> Volver </button>
+</div>
+<div *ngIf="!permisos" class="alert alert-warning">
+ <h5> El Rol No tiene Permisos asociados. </h5>
+</div>
+
+<router-outlet></router-outlet>
+

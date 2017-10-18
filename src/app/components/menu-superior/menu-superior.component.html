@@ -41,25 +41,8 @@
             Contacto
           </a>
         </li>
-        <li>
-          <a [routerLink]="['/tienda']" [routerLinkActive]="['active']" >
-            <span class="glyphicon glyphicon-gift" aria-hidden="true"></span>
-            Tienda
-          </a>
-        </li>
-
-        <li>
-          <a [routerLink]="['/new-task']" *ngIf="identity && identity.sub" >
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-            Crear Tarea
-          </a>
-        </li>
 
       </ul>
-      <ul>
-
-      </ul>
-
       <ul class="nav navbar-nav navbar-right" *ngIf="!identity">
         <li>
           <a [routerLink]="['/registro']" [routerLinkActive]="['active']" ><span class="glyphicon glyphicon-user"></span>Registro</a>
@@ -75,31 +58,18 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-
               <a [routerLink]="['/user-edit']"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Mis Datos</a>
             </li>
             <li>
               <a [routerLink]="['/admin-panel']"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Administrar</a>
             </li>
-
             <li>
               <a class="pointer" (click)="logout()"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Salir</a>
             </li>
 
           </ul>
         </li>
-        <!--<li>
-          <a [routerLink]="['/user-edit']" *ngIf="identityMean && identityMean._id">
-            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-            Ajustes
-          </a>
-        </li>
-        <li>
-          <a [routerLink]="['/login',1]" *ngIf="identityMean && identityMean._id" >
-            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
-            Salir
-          </a>
-        </li>-->
+
       </ul>
     </div>
   </div>

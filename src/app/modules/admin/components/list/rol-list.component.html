@@ -1,4 +1,9 @@
 <div class="col-lg-12">
+  <div class="loader" *ngIf="loading=='show'">
+    <img src="../../../../../assets/images/bike.gif" />
+
+  </div>
+<div class="col-lg-12" *ngIf="roles">
 <h3>
   {{title}}
 </h3>
@@ -15,21 +20,26 @@
       <td>{{rol.descRol}}</td>
       <td>{{rol.estado}}</td>
       <td>
-        <button class="btn btn-sm btn-success">
-          <span class="glyphicon glyphicon-eye-open"></span>
-          Ver Permisos
-        </button>
-        <button class="btn btn-sm btn-primary">
+        <a class="btn btn-sm btn-success" [routerLink]="['../permiso-list',rol.rolId]" *ngIf="rol.estado === 'Activo'">
+          <span class="glyphicon glyphicon-eye-open" ></span>
+          Ver Permisos a
+        </a>
+        <button class="btn btn-sm btn-primary" *ngIf="rol.estado === 'Activo'">
           <span class="glyphicon glyphicon-pencil"></span>
           Editar
         </button>
-        <button class="btn btn-sm btn-danger">
+        <button *ngIf="rol.estado === 'Activo'" class="btn btn-sm btn-danger" (click)="deshabilitarRol(rol.rolId)">
           <span class="glyphicon glyphicon-remove-sign"></span>
-          Eliminar
+          Deshabilitar
+        </button>
+        <button *ngIf="rol.estado === 'Inactivo'" class="btn btn-sm btn-info" (click)="deshabilitarRol(rol.rolId)">
+          <span class="glyphicon glyphicon-ok"></span>
+          Habilitar
         </button>
       </td>
     </tr>
 
     </tbody>
   </table>
+</div>
 </div>

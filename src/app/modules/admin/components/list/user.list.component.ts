@@ -17,6 +17,7 @@ export class UserListComponent implements OnInit {
   public rol: Role;
   public roles: Role[];
   public users: User[];
+  public loading;
 
   constructor(
     private _userService: UserService,
@@ -28,6 +29,7 @@ export class UserListComponent implements OnInit {
     this.title = 'Lista De Usuarios';
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken2();
+    this.loading = 'show';
 
   }
 
@@ -41,6 +43,7 @@ export class UserListComponent implements OnInit {
         if (response.status === 'success') {
           console.log('ok');
           this.users = response.data;
+          this.loading = 'hide';
         }else {
           console.log('error de peticion');
         }
