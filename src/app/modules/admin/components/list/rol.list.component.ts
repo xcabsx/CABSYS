@@ -3,12 +3,14 @@ import { Router, ActivatedRoute, Params} from '@angular/router';
 import { RoleService} from '../../service/Role.service';
 import { UserService} from '../../../../services/user.service';
 import { Role} from '../../Models/Role';
-import {loadavg} from "os";
+import { fundido} from '../../../../animations/animation';
+
 
 @Component({
   selector: 'admin-rol-list',
   templateUrl: './rol-list.component.html',
-  providers: [RoleService, UserService]
+  providers: [RoleService, UserService],
+  animations: [ fundido]
 })
 export class RolListComponent implements OnInit {
   public title;

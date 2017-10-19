@@ -4,11 +4,13 @@ import { RoleService} from '../../service/Role.service';
 import { UserService} from '../../../../services/user.service'; // de afuera
 import { Role} from '../../Models/Role'; // de afuera
 import { User} from '../../../../models/user';
+import { fundido1} from '../../../../animations/animation';
 
 @Component({
   selector: 'admin-user-list',
   templateUrl: './user-list.component.html',
-  providers: [RoleService, UserService]
+  providers: [RoleService, UserService],
+  animations: [fundido1]
 })
 export class UserListComponent implements OnInit {
   public title;
