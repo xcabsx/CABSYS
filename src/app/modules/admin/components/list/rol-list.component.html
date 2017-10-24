@@ -24,9 +24,9 @@
           <span class="glyphicon glyphicon-eye-open" ></span>
           Ver Permisos a
         </a>
-        <button class="btn btn-sm btn-primary" *ngIf="rol.estado === 'Activo'">
+        <button class="btn btn-sm btn-primary" [routerLink]="['../rol-asign',rol.rolId]" *ngIf="rol.estado === 'Activo'">
           <span class="glyphicon glyphicon-pencil"></span>
-          Editar
+          Asignar
         </button>
         <button *ngIf="rol.estado === 'Activo'" class="btn btn-sm btn-danger" (click)="deshabilitarRol(rol.rolId)">
           <span class="glyphicon glyphicon-remove-sign"></span>

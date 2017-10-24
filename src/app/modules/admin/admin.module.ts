@@ -16,6 +16,11 @@ import { UserAddComponent} from './components/add/user.add.component';
 import { RolAddComponent} from './components/add/rol.add.component';
 import { PermisosListComponent} from './components/list/permisos.list.component';
 import { UserDetailsComponent} from './components/view/user.details.component';
+import { Tabs} from '../../components/tabs/tabs.component';
+import { Tab} from '../../components/tabs/tab.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { SidebarComponent} from "./components/main/sidebar";
+import { RolXUserComponent} from "./components/add/Rol.x.User.component";
 
 
 @NgModule({
@@ -30,13 +35,18 @@ import { UserDetailsComponent} from './components/view/user.details.component';
     UserAddComponent,
     RolAddComponent,
     PermisosListComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    Tabs,
+    Tab,
+    SidebarComponent,
+    RolXUserComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     HttpModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    NgbModule
   ],
   providers: []
 })

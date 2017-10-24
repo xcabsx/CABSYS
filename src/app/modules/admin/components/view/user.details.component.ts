@@ -5,6 +5,8 @@ import { User} from '../../../../Models/user';
 import { Role} from '../../Models/Role';
 import { RoleService} from '../../service/Role.service';
 import { fundido1} from '../../../../animations/animation';
+import { Tabs} from '../../../../components/tabs/tabs.component';
+import { Tab} from '../../../../components/tabs/tab.component';
 
 @Component({
   selector: 'admin-user-view',
@@ -86,7 +88,7 @@ export class UserDetailsComponent implements OnInit {
     });
   }
 
-  getRolesxUsuario(){
+  getRolesxUsuario() {
     // this.loading = 'show';
     this._route.params.forEach((params: Params) => {
       const id = +params['id'];

@@ -1,11 +1,12 @@
-<div class="col-lg-10 col-lg-offset-1" [@fadein]>
-  <div class="jumbotron">
+<div class="d-flex justify-content-center" [@fadein]>
+  <div class="jumbotron    ">
     <h1></h1>
     <p> Bienvenidos!!... .</p>
     <p>
       <a class="btn btn-primary btn-lg" [routerLink]="['/animals']">
         Productos
       </a>
+
       <a class="btn btn-success btn-lg" [routerLink]="['/keepers']">
         Servicios
       </a>
@@ -15,3 +16,17 @@
     </p>
   </div>
 </div>
+
+<div class="col-md-3 col-xs-1 p-l-0 p-r-0 collapse in" id="sidebar">
+  <div class="list-group panel">
+    <a href="#menu1" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-dashboard"></i> <span class="hidden-sm-down">Item 1</span> </a>
+    <div class="collapse" id="menu1">
+      <a href="#menu1sub1" class="list-group-item" data-toggle="collapse" aria-expanded="false">Subitem 1 </a>
+    </div>
+  </div>
+</div>
+
+
+
+
+

@@ -5,12 +5,15 @@ import { FormsModule} from '@angular/forms';
 import { routing, appRoutingProviders} from './app.routing';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+
 import { AppComponent } from './app.component';
 import { HomeComponent} from './components/home/home.component';
 import { MenuSuperiorComponent } from './components/menu-superior/menu-superior.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { AdminModule} from './modules/admin/admin.module';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+//import { SidebarComponent} from "./sidebar";
 
 
 @NgModule({
@@ -19,8 +22,11 @@ import { AdminModule} from './modules/admin/admin.module';
     HomeComponent,
     MenuSuperiorComponent,
     LoginComponent,
-    UserEditComponent
+    UserEditComponent,
+    //SidebarComponent
   ],
+  entryComponents: [
+    ],
   providers: [appRoutingProviders],
   imports: [
     BrowserModule,
@@ -28,7 +34,8 @@ import { AdminModule} from './modules/admin/admin.module';
     FormsModule,
     routing,
     BrowserAnimationsModule,
-    AdminModule
+    AdminModule,
+    NgbModule.forRoot()
   ],
   bootstrap: [AppComponent]
 })

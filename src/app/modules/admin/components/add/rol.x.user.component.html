@@ -1,0 +1,42 @@
+
+
+
+<div class="col-lg-12">
+  <div class="loader" *ngIf="loading=='show'">
+    <img src="../../../../../assets/images/bike.gif" />
+  </div>
+  <div class="col-lg-12" *ngIf="users">
+    <h4>
+      Asignar Usuarios a Rol {{rolActivo}}
+    </h4>
+
+    <table class="table table-hover">
+      <thead class="thead-default">
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Asignar</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users" [@fadein2]>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>
+
+          <label *ngIf="loadingRol=='hide'"  class="custom-control custom-checkbox">
+            <input  id="chk" (change)="grabarRxu(user.id,user.role)" type="checkbox" class="custom-control-input" value="{{user.id}}" [checked]="user.role=='OK'">
+            <span class="custom-control-indicator"></span>
+          </label>
+          <span *ngIf="loadingRol=='show'">
+            <img src="../../../../../assets/images/ajax-loader.gif" /></span>
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+

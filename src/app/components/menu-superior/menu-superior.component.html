@@ -1,76 +1,43 @@
 <header id="header" xmlns="" xmlns="" xmlns="" xmlns="">
-  <div class="navbar navbar-default " style="margin-top: 10px">
-    <div class="navbar-header ">
-      <!--boton de desplegar menu responsive-->
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-              data-target="#menu" >
-        <span class="sr-only">toggle</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" [routerLink]="['/']">
-        <img src="/../assets/images/terry.png"  id="logo">
-      </a>
-      <!-- logo-->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex  col-lg-8 offset-lg-2">
+    <a class="navbar-brand" [routerLink]="['/']">
+      <img src="/../assets/images/terry.png"  id="logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/inicio']"  [routerLinkActive]="['active']" >Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/animals']"  [routerLinkActive]="['active']" >Home <span class="sr-only">(current)</span></a>
+        </li>
+       <li class="nav-item">
+         <a class="nav-link"  [routerLink]="['/keepers']" [routerLinkActive]="['active']">
+           <span class="glyphicon glyphicon-filter" ></span>
+           Servicios
+         </a>
+       </li>
+      </ul>
+
+      <ul class="navbar-nav navbar-right ml-auto p-2 ">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{identity.name}} <span class=""></span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['/user-edit']"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Mis Datos</a>
+            <a class="dropdown-item" [routerLink]="['/admin-panel']"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Administrar</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="logout()"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Salir</a>
+          </div>
+        </li>
+      </ul>
 
     </div>
-    <div class="collapse navbar-collapse" id="menu">
-      <ul class="nav navbar-nav">
-        <li>
-          <a [routerLink]="['/inicio']"  [routerLinkActive]="['active']">
-            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-            Home
-          </a>
-        </li>
-        <li>
-          <a [routerLink]="['/animals']" [routerLinkActive]="['active']"  >
-            <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-            Productos
-          </a>
-        </li>
-        <li>
-          <a [routerLink]="['/keepers']" [routerLinkActive]="['active']">
-            <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
-            Servicios
-          </a>
-        </li>
-        <li>
-          <a [routerLink]="['/contacto']" [routerLinkActive]="['active']" >
-            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-            Contacto
-          </a>
-        </li>
-
-      </ul>
-      <ul class="nav navbar-nav navbar-right" *ngIf="!identity">
-        <li>
-          <a [routerLink]="['/registro']" [routerLinkActive]="['active']" ><span class="glyphicon glyphicon-user"></span>Registro</a>
-        </li>
-        <li>
-          <a [routerLink]="['/login']" [routerLinkActive]="['active']" ><span class="glyphicon glyphicon-log-in"></span> Login</a>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right" *ngIf="identity">
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            {{identity.name}} <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li>
-              <a [routerLink]="['/user-edit']"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Mis Datos</a>
-            </li>
-            <li>
-              <a [routerLink]="['/admin-panel']"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Administrar</a>
-            </li>
-            <li>
-              <a class="pointer" (click)="logout()"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Salir</a>
-            </li>
-
-          </ul>
-        </li>
-
-      </ul>
-    </div>
-  </div>
+  </nav>
 </header>

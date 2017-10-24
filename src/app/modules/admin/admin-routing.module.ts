@@ -14,11 +14,13 @@ import { RolAddComponent} from './components/add/rol.add.component';
 import { EditComponent} from './components/edit/edit.component';
 import { PermisosListComponent} from './components/list/permisos.list.component';
 import { UserDetailsComponent} from './components/view/user.details.component';
+import { SidebarComponent} from "./components/main/sidebar";
+import { RolXUserComponent} from "./components/add/Rol.x.User.component";
 
 const adminRoutes: Routes = [
   {
     path: 'admin-panel',
-    component: MainComponent,
+    component: SidebarComponent,
      children: [
        {path: '', redirectTo: 'admin-panel', pathMatch: 'full'},
       {path: 'listado', component: RolListComponent},
@@ -30,6 +32,7 @@ const adminRoutes: Routes = [
       {path: 'user-edit/:id', component: UserEdit1Component },
       {path: 'permiso-list/:id', component: PermisosListComponent },
       {path: 'user-detail/:id', component: UserDetailsComponent },
+      {path: 'rol-asign/:id', component: RolXUserComponent },
       {path: '**', component: RolListComponent },
 
 

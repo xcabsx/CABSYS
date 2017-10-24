@@ -1,7 +1,8 @@
-<div class="col-md-3">
+<div class="d-flex flex-row">
+<div class="col-lg-3 ">
   <h4>{{title}}</h4>
 
-   <nav id="sidebar">
+   <nav  id="sidebar">
      <ul class="list-unstyled components">
         <li >
           <a href="#userSubmenu" data-toggle="collapse" aria-expanded="false" [routerLinkActive]="['active']">Usuarios</a>
@@ -29,6 +30,7 @@
 
     </nav>
 </div>
-<div class="col-md-9">
+<div class="col-lg-9 ">
    <router-outlet ></router-outlet>
+</div>
 </div>

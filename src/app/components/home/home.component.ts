@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { fundido} from '../../animations/animation';
+
+import {UserDetailsComponent} from "../../modules/admin/components/view/user.details.component";
+
 
 @Component({
   selector: 'app-home',
@@ -9,9 +12,16 @@ import { fundido} from '../../animations/animation';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+
+  constructor() {
+
+  }
 
   ngOnInit() {
   }
 
+
 }
+
+
+

@@ -2,11 +2,11 @@ import { Component} from '@angular/core';
 
 
 @Component({
-  selector: 'admin-main',
-  templateUrl: './main.component.html',
+  selector: 'admin-sidebar',
+  templateUrl: './sidebar.component.html',
 
-  })
-export class MainComponent  {
+})
+export class SidebarComponent  {
   title = 'Panel de Administracion';
 
   constructor( ) {}
