@@ -1,0 +1,44 @@
+
+<h3>
+  {{title}} {{rolDescripcion}}
+
+</h3>
+<div *ngIf="roles1">
+<table class="table table-bordered table-hover">
+  <thead class="thead-default">
+  <tr>
+    <th>Rol</th>
+    <th>Estado</th>
+    <th *ngIf="edit=='S'"> Acciones</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let role of roles1">
+    <td>{{role.descRol}}</td>
+    <td>{{role.estado}}</td>
+    <td *ngIf="edit=='S'">
+      <a class="btn btn-sm btn-success" [routerLink]="['../../permiso-list',role.rolId]">
+        <span class="glyphicon glyphicon-eye-open" ></span>
+        Ver Permisos
+      </a>
+      <button class="btn btn-sm btn-danger" (click)="quitarRol(role.rolId,idIn)">
+        <span class="glyphicon glyphicon-remove-sign"></span>
+        Quitar Rol
+      </button>
+    </td>
+
+
+  </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+<div *ngIf="!roles1" class="alert alert-warning">
+ <h5> El usuario No tiene Roles asociados. </h5>
+</div>
+
+<router-outlet></router-outlet>
+

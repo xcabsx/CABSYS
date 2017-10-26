@@ -77,13 +77,13 @@
   margin-bottom: 15px;
 
 }
-.task-item  {
+/*.task-item  {
   cursor: pointer;
 }
 #tasks-list tr{
   cursor: pointer;
 
-}
+}*/
 .btn-search{
   padding: 6px 7px ;
 }
@@ -214,26 +214,26 @@
   color : black;
 }
 
-#sidebar ul.components {
+/*#sidebar ul.components {
   padding: 20px 0;
   border-bottom: 0.5px solid #47748b;
 
-}
+}*/
 
-#sidebar ul p {
+/*#sidebar ul p {
   color: #fff;
   padding: 10px;
-}
+}*/
 
 #sidebar ul li a {
   padding: 10px;
   font-size: 1.1em;
   display: block;
 }
-#sidebar ul li a:hover {
+/*#sidebar ul li a:hover {
   color: white;
   background: #337ab7;
-}
+}*/
 
 /*#sidebar ul li.active > a, a[aria-expanded="true"] {
   color: #fff;
@@ -241,9 +241,9 @@
 }*/
 
 
-a[data-toggle="collapse"] {
+/*a[data-toggle="collapse"] {
   position: relative;
-}
+}*/
 /*
 a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
   content: '\e259';
@@ -275,14 +275,14 @@ ul.CTAs a {
   border-radius: 5px;
   margin-bottom: 5px;
 }
-a.download {
+/*a.download {
   background: #fff;
   color: #7386D5;
-}
-a.article, a.article:hover {
+}*/
+/*a.article, a.article:hover {
   background: #6d7fcc !important;
   color: #fff !important;
-}
+}*/
 
 a.hovcolor:hover {
   background: #adadad !important;
@@ -295,26 +295,29 @@ a, a:hover, a:focus {
   transition: all 0.3s;
 }
 
-.navbar {
+/*.navbar {
   padding: 15px 10px;
   background: #fff;
   border: none;
   border-radius: 0;
   margin-bottom: 40px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-}
+}*/
 
-.navbar-btn {
+/*.navbar-btn {
   box-shadow: none;
   outline: none !important;
   border: none;
-}
+}*/
 
 .line {
   width: 100%;
   height: 1px;
   border-bottom: 1px dashed #ddd;
   margin: 40px 0;
+}
+body {
+  padding-top: 5rem;
 }
 
 /*
@@ -449,8 +452,47 @@ a, a:hover, a:focus {
 
 }
 
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
 
-
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+.navtop > a {
+  color: white!important;
+}
+#navbarSupportedContent ul> li> a.nav-link{
+  color: white!important;
+}
 /*body, html, .container-fluid {
   height: 100%;
 }

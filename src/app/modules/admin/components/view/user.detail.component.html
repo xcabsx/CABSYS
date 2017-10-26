@@ -32,48 +32,20 @@
   </ul>
   <div class="tab-content" id="pills-tabContent">
     <div class="tab-pane fade show active" id="pills-roles" role="tabpanel" aria-labelledby="pills-Roles-tab">
-      <div class="alert " *ngIf="!roles"> Cargando </div>
-      <div class=" " *ngIf="roles">
-        <p></p>
-        <table class="table table-hover">
-          <thead class="thead-default">
-          <tr>
-            <th>Rol</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let rol of roles">
-            <td>{{rol.descRol}}</td>
-            <td>{{rol.estado}}</td>
-            <td>
-              <a class="btn btn-sm btn-success" [routerLink]="['../../permiso-list',rol.rolId]">
-                <span class="glyphicon glyphicon-eye-open" ></span>
-                Ver Permisos
-              </a>
-              <button class="btn btn-sm btn-danger">
-                <span class="glyphicon glyphicon-remove-sign"></span>
-                Quitar Rol
-              </button>
-            </td>
-          </tr>
-
-          </tbody>
-        </table>
-
-      </div>
+      <admin-rxs-list [idIn]="idusuario" [edit]="'S'"></admin-rxs-list>
     </div>
-    <div class="tab-pane fade" id="pills-direccion" role="tabpanel" aria-labelledby="pills-direcciones-tab">...</div>
+    <div class="tab-pane fade" id="pills-direccion" role="tabpanel" aria-labelledby="pills-direcciones-tab">
+
+    </div>
     <div class="tab-pane fade" id="pills-cuenta" role="tabpanel" aria-labelledby="pills-cuenta-tab">...</div>
 
   </div>
 
 
 </div>
-<div class="loader" *ngIf="loadingR=='show'" [@fadein2]>
+<!--<div class="loader" *ngIf="loadingR=='show'" [@fadein2]>
   <img src="../../../../../assets/images/gearxs.gif" />
-</div>
+</div>-->
 
 
 

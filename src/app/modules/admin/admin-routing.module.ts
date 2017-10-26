@@ -16,6 +16,7 @@ import { PermisosListComponent} from './components/list/permisos.list.component'
 import { UserDetailsComponent} from './components/view/user.details.component';
 import { SidebarComponent} from "./components/main/sidebar";
 import { RolXUserComponent} from "./components/add/Rol.x.User.component";
+import { UsuariosXRolListComponent} from "./components/list/usuarios.x.rol.list.component";
 
 const adminRoutes: Routes = [
   {
@@ -31,6 +32,7 @@ const adminRoutes: Routes = [
       {path: 'crear-rol', component: RolAddComponent},
       {path: 'user-edit/:id', component: UserEdit1Component },
       {path: 'permiso-list/:id', component: PermisosListComponent },
+      {path: 'uxr-list/:id', component: UsuariosXRolListComponent },
       {path: 'user-detail/:id', component: UserDetailsComponent },
       {path: 'rol-asign/:id', component: RolXUserComponent },
       {path: '**', component: RolListComponent },

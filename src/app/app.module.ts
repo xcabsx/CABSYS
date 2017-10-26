@@ -13,6 +13,8 @@ import { LoginComponent } from './components/login/login.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { AdminModule} from './modules/admin/admin.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
+
 //import { SidebarComponent} from "./sidebar";
 
 
@@ -23,6 +25,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MenuSuperiorComponent,
     LoginComponent,
     UserEditComponent,
+
     //SidebarComponent
   ],
   entryComponents: [

@@ -7,14 +7,15 @@ import { RoleService} from '../../service/Role.service';
 import { fundido1} from '../../../../animations/animation';
 import { Tabs} from '../../../../components/tabs/tabs.component';
 import { Tab} from '../../../../components/tabs/tab.component';
+import {RolesXUsuariolListComponent} from '../list/roles.x.usuariol.list.component';
 
 @Component({
   selector: 'admin-user-view',
   templateUrl: './user.detail.component.html',
-  //templateUrl: '../list/rol-list.component.html',
   providers: [UserService, RoleService],
   animations: [fundido1]
-})
+
+  })
 export class UserDetailsComponent implements OnInit {
   public title: string;
   public user1: User;
@@ -25,6 +26,7 @@ export class UserDetailsComponent implements OnInit {
   public roles: Role[];
   public loadingU;
   public loadingR;
+  public idusuario;
 
 
   constructor(
@@ -46,21 +48,13 @@ export class UserDetailsComponent implements OnInit {
     if ( this.identity == null) {
       // this._router.navigate(['/login']);
     }else {
-
-
-      this.user1 = new User(
-        0,//this.identity.sub ,
-      '',//  this.identity.role,
-      '',//  this.identity.name,
-       '',// this.identity.surname,
-       '',// this.identity.email,
-       ''// this.identity.password
-        );
+      this._route.params.forEach((params: Params) => {
+        this.idusuario = +params['id'];
+      });
       this.getUser();
-      this.getRolesxUsuario();
+     // this.getRolesxUsuario();
     }
-    console.log('user edit component');
-    console.log(this.user1);
+
 
   }
 
@@ -75,6 +69,7 @@ export class UserDetailsComponent implements OnInit {
             // podemos ver la tarea
             this.user1 = response.data;
              this.loadingU = 'hide';
+
           }else {
             //aca va error
             console.log(response.status );
@@ -98,11 +93,9 @@ export class UserDetailsComponent implements OnInit {
           if (response.status === 'success') {
             // podemos ver la tarea
             this.roles = response.data;
-            console.log(this.roles);
              this.loadingR = 'hide';
           }else {
             //aca va error
-            console.log(response.status );
             this._router.navigate(['/login']);
           }
 
@@ -111,6 +104,19 @@ export class UserDetailsComponent implements OnInit {
         }
       );
     });
+  }
+  quitarRol(rolid, userid) {
+    this._roleService.deleteRolesxUsers(this.token, rolid , userid).subscribe(
+      response => {
+        if (response.status === 'success') {
+        //  this.loadingRol = 'hide';
+          this.getRolesxUsuario();
+        }else {
+          console.log('no anda');
+        }
+      }, error => {
+        console.log(<any>error);
+      });
   }
    volver() {
     window.history.back();

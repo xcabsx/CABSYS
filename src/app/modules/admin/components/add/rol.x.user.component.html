@@ -6,9 +6,8 @@
     <img src="../../../../../assets/images/bike.gif" />
   </div>
   <div class="col-lg-12" *ngIf="users">
-    <h4>
-      Asignar Usuarios a Rol {{rolActivo}}
-    </h4>
+    <h3>{{rolActivo}}</h3>
+    <h4>Usuarios</h4>
 
     <table class="table table-hover">
       <thead class="thead-default">
@@ -36,7 +35,9 @@
       </tbody>
     </table>
   </div>
+  <button class="btn btn-success" (click)="volver()">Volver</button>
 </div>
+
 
 
 

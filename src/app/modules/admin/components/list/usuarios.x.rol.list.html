@@ -1,0 +1,35 @@
+
+<h2>
+  {{rolDescripcion}}
+</h2>
+<h3>
+  Usuarios
+</h3>
+<div *ngIf="users">
+<table class="table table-bordered table-hover">
+  <thead class="thead-default">
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Email</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users">
+    <td>{{user.name}}</td>
+    <td>{{user.surname}}</td>
+    <td>{{user.email}}</td>
+
+  </tr>
+
+  </tbody>
+
+</table>
+  <button class="btn btn-md btn-success" (click)="volver()"> Volver </button>
+</div>
+<div *ngIf="!users" class="alert alert-warning">
+ <h5> El Rol No tiene Usuarios asociados. </h5>
+</div>
+
+<router-outlet></router-outlet>
+

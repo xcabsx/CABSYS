@@ -31,6 +31,7 @@
      <span *ngIf="!password.valid && password.touched"> Ingrese un Password valido </span>
    </p>
    <input type="submit" value="Registrarse" class="btn btn-success" [disabled]="!registerForm.form.valid" />
+   <button class="btn btn-success" (click)="volver()"> Volver</button>
 
  </form>
 </div>

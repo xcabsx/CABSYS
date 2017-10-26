@@ -19,8 +19,10 @@ import { UserDetailsComponent} from './components/view/user.details.component';
 import { Tabs} from '../../components/tabs/tabs.component';
 import { Tab} from '../../components/tabs/tab.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { SidebarComponent} from "./components/main/sidebar";
-import { RolXUserComponent} from "./components/add/Rol.x.User.component";
+import { SidebarComponent} from './components/main/sidebar';
+import { RolXUserComponent} from './components/add/Rol.x.User.component';
+import { UsuariosXRolListComponent} from './components/list/usuarios.x.rol.list.component';
+import { RolesXUsuariolListComponent} from './components/list/roles.x.usuariol.list.component';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { RolXUserComponent} from "./components/add/Rol.x.User.component";
     Tabs,
     Tab,
     SidebarComponent,
-    RolXUserComponent
+    RolXUserComponent,
+    UsuariosXRolListComponent,
+    RolesXUsuariolListComponent
   ],
   imports: [
     CommonModule,

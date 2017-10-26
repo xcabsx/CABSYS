@@ -11,4 +11,8 @@ export class MainComponent  {
 
   constructor( ) {}
 
+  volver() {
+    window.history.back();
+  }
+
 }

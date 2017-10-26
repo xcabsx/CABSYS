@@ -125,5 +125,8 @@ export class RolXUserComponent implements OnInit {
     }
     });
   }
+  volver() {
+    window.history.back();
+  }
 
 }

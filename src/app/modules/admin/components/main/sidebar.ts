@@ -10,5 +10,8 @@ export class SidebarComponent  {
   title = 'Panel de Administracion';
 
   constructor( ) {}
+  volver() {
+    window.history.back();
+  }
 
 }

@@ -53,5 +53,8 @@ export class UserAddComponent implements OnInit {
           console.log(<any>error);
       });
   }
+  volver() {
+    window.history.back();
+  }
 
 }

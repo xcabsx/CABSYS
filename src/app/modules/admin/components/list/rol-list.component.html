@@ -10,33 +10,50 @@
   <table class="table table-hover">
     <thead class="thead-default">
     <tr>
+        <th></th>
         <th>Rol</th>
         <th>Estado</th>
-        <th>Acciones</th>
+        <th>Permisos</th>
+        <th>Usuarios</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let rol of roles">
+      <td>
+        <button data-toggle="tooltip" data-placement="top" title="Deshabilitar Rol" *ngIf="rol.estado === 'Activo'" class="btn btn-sm btn-danger  my-1" (click)="deshabilitarRol(rol.rolId)">
+          <span ><i class="fa fa-close"></i></span>
+
+        </button>
+        <button data-toggle="tooltip" data-placement="top" title="habilitar Rol" *ngIf="rol.estado === 'Inactivo'" class="btn btn-sm btn-info" (click)="deshabilitarRol(rol.rolId)">
+          <span ><i class="fa fa-check"></i></span>
+
+        </button>
+      </td>
       <td>{{rol.descRol}}</td>
       <td>{{rol.estado}}</td>
       <td>
-        <a class="btn btn-sm btn-success" [routerLink]="['../permiso-list',rol.rolId]" *ngIf="rol.estado === 'Activo'">
-          <span class="glyphicon glyphicon-eye-open" ></span>
-          Ver Permisos a
+        <a class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="Ver permisos del Rol" [routerLink]="['../permiso-list',rol.rolId]" *ngIf="rol.estado === 'Activo'">
+          <span><i class="fa fa-eye"></i></span>
+
         </a>
-        <button class="btn btn-sm btn-primary" [routerLink]="['../rol-asign',rol.rolId]" *ngIf="rol.estado === 'Activo'">
-          <span class="glyphicon glyphicon-pencil"></span>
-          Asignar
+
+        <button data-toggle="tooltip" data-placement="top" title="Agregar permisos al Rol" class="btn btn-sm btn-primary" [routerLink]="['../perm-asign',rol.rolId]" *ngIf="rol.estado === 'Activo'">
+          <span ><i class="fa fa-plus-circle"></i></span>
+
         </button>
-        <button *ngIf="rol.estado === 'Activo'" class="btn btn-sm btn-danger" (click)="deshabilitarRol(rol.rolId)">
-          <span class="glyphicon glyphicon-remove-sign"></span>
-          Deshabilitar
-        </button>
-        <button *ngIf="rol.estado === 'Inactivo'" class="btn btn-sm btn-info" (click)="deshabilitarRol(rol.rolId)">
-          <span class="glyphicon glyphicon-ok"></span>
-          Habilitar
-        </button>
+
       </td>
+      <td>
+        <a class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="Ver Usuarios asignados al Rol" [routerLink]="['../uxr-list',rol.rolId]" *ngIf="rol.estado === 'Activo'">
+          <span><i class="fa fa-eye"></i></span>
+
+        </a>
+        <button data-toggle="tooltip" data-placement="top" title="Agregar Usuarios al Rol" class="btn btn-sm btn-primary" [routerLink]="['../rol-asign',rol.rolId]" *ngIf="rol.estado === 'Activo'">
+          <span ><i class="fa fa-plus-circle"></i></span>
+        </button>
+
+      </td>
+
     </tr>
 
     </tbody>
