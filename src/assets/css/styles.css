@@ -493,6 +493,10 @@ body {
 #navbarSupportedContent ul> li> a.nav-link{
   color: white!important;
 }
+
+.desac {
+  background: #adadad!important;
+}
 /*body, html, .container-fluid {
   height: 100%;
 }

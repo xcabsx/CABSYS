@@ -1,13 +1,27 @@
-<div class="col-lg-12">
+<div class="d-flex flex-column">
   <div class="loader" *ngIf="loading=='show'">
     <img src="../../../../../assets/images/bike.gif" />
-  </div>
-<div class="col-lg-12" *ngIf="users">
-<h3>
-  {{title}}
-</h3>
+ </div>
+<div class="d-flex justify-content-between bd-highlight mb-3">
+  <div class="p-2 bd-highlight"><h3>{{title}}</h3></div>
+  <div class="p-2 bd-highlight">
+    <label class="mr-sm-2" for="inlineFormCustomSelect">Filtro</label>
+    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" #filtroselect (change)="filtrar(filtroselect.value)">
+      <option selected>Elegir...</option>
+      <option value="Activos">Activos</option>
+      <option value="Inactivos">Inactivos</option>
+      <option value="Todos">Todos</option>
+    </select>
 
-  <table class="table table-hover">
+  </div>
+</div>
+<div class="col-lg-12" *ngIf="users">
+
+
+
+
+
+  <table class="table table-striped">
     <thead class="thead-default">
     <tr>
         <th>Nombre</th>
@@ -16,22 +30,26 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let user of users" [@fadein2]>
+    <tr *ngFor="let user of users" [@fadein2] [class.text-muted]="user.estado==='Inactivo'">
       <td>{{user.name}}</td>
       <td>{{user.email}}</td>
-      <td>
-        <a class="btn btn-sm btn-success" [routerLink]="['../user-detail',user.id]">
+      <td >
+        <a *ngIf="user.estado==='Activo'" class="btn btn-sm btn-success" [routerLink]="['../user-detail',user.id]">
           <span class="glyphicon glyphicon-eye-open"></span>
           Ver Detalle
         </a>
 
-        <a class="btn btn-sm btn-primary" [routerLink]="['../edit',user.id]">
+        <a *ngIf="user.estado==='Activo'" class="btn btn-sm btn-primary " [routerLink]="['../edit',user.id]">
           <span class="glyphicon glyphicon-pencil"></span>
           Editar
         </a>
-        <button class="btn btn-sm btn-danger">
+        <button *ngIf="user.estado==='Activo'" class="btn btn-sm btn-danger" (click)="deshabilitarUser(user.id)">
           <span class="glyphicon glyphicon-remove-sign"></span>
-          Eliminar
+          Inhabilitar
+        </button>
+        <button *ngIf="user.estado==='Inactivo'" class="btn btn-sm btn-success" (click)="deshabilitarUser(user.id)">
+          <span class="glyphicon glyphicon-remove-sign"></span>
+          Habilitar
         </button>
       </td>
     </tr>

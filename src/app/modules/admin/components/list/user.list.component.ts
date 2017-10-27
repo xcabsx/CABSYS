@@ -17,9 +17,11 @@ export class UserListComponent implements OnInit {
   public identity;
   public token;
   public rol: Role;
+  public user: User;
   public roles: Role[];
   public users: User[];
   public loading;
+  public filtro;
 
   constructor(
     private _userService: UserService,
@@ -32,6 +34,7 @@ export class UserListComponent implements OnInit {
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken2();
     this.loading = 'show';
+    this.filtro = 'Todos';
 
   }
 
@@ -43,13 +46,53 @@ export class UserListComponent implements OnInit {
     this._userService.getUsers(this.token).subscribe(
       response => {
         if (response.status === 'success') {
-          console.log('ok');
           this.users = response.data;
           this.loading = 'hide';
+          if (this.filtro === 'Activos') {
+            this.users = this.users.filter(function(user){
+              return user.estado === 'Activo';
+            });
+          }else if (this.filtro === 'Inactivos') {
+            this.users = this.users.filter(function(user){
+              return user.estado === 'Inactivo';
+            });
+          }
+          console.log('prueba status..' + this.users);
+
         }else {
           console.log('error de peticion');
         }
       }, error =>{
+        console.log(<any>error);
+      }
+    );
+
+  }
+  filtrar(event) {
+    console.log(event);
+    this.filtro = event;
+    this.getUsers();
+
+  }
+
+  deshabilitarUser(userid) {
+    this._userService.deshabilitarUser(this.token, userid).subscribe(
+      response => {
+
+        if (response.status === 'success') {
+          // podemos ver la tarea
+          this.user = response.data;
+          //this._router.navigate(['/admin-panel/listado']);
+          // this.loading = 'hide';
+          console.log("ok habilitar");
+          this.getUsers();
+        }else {
+          //aca va error
+          console.log("error activar:" + response.status );
+          //this._router.navigate(['/login']);
+        }
+
+      }, error => {
         console.log(<any>error);
       }
     );

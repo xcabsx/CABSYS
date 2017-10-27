@@ -22,7 +22,7 @@ export class UserEditComponent implements OnInit {
     this.editar = false;
     this.token = this._userService.getToken2();
     this.identity = this._userService.getIdentity();
-    this.user = new User(0, '', '', '', '', '');
+    this.user = new User(0, '', '', '', '', '', '');
   }
 
   ngOnInit() {

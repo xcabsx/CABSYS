@@ -85,6 +85,11 @@ export class UserService {
 
     return this._http.post(this.url + '/user/user/' + id , params , {headers: headers}).map(res => res.json());
   }
+  deshabilitarUser(token, id) {
+    const params = 'authorization=' + token;
+    const headers = new Headers({'Content-Type' : 'application/x-www-form-urlencoded'});
+    return this._http.post(this.url + '/user/del/' + id, params , {headers: headers}).map(res => res.json());
+  }
 }
 
 
