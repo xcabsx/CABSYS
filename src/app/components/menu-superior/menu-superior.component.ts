@@ -1,6 +1,7 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 import { UserService} from '../../services/user.service';
 import { Router} from '@angular/router';
+import {forEach} from "@angular/router/src/utils/collection";
 
 @Component({
   selector: 'app-menu-superior',
@@ -11,6 +12,10 @@ import { Router} from '@angular/router';
 export class MenuSuperiorComponent implements OnInit, DoCheck {
   public token;
   public identity;
+  public Bar;
+  public Lubri;
+  public Drugstore;
+  public Estacion;
 
   constructor(
     private _userServices: UserService,
@@ -18,6 +23,10 @@ export class MenuSuperiorComponent implements OnInit, DoCheck {
   ) {
     this.identity = this._userServices.getIdentity();
     this.token = this._userServices.getToken2();
+    this.Bar = false;
+    this.Lubri = false;
+    this.Drugstore = false;
+    this.Estacion = false;
   }
 
   ngOnInit() {
@@ -25,6 +34,24 @@ export class MenuSuperiorComponent implements OnInit, DoCheck {
   ngDoCheck() { // aca se hace para que controle en cada cambio el usuario logeado
     this.identity = this._userServices.getIdentity();
     this.token = this._userServices.getToken2();
+    this.Bar = false;
+    if (this.identity) {
+    for (let i = 0 ; i < this.identity.Apls.length; i++) {
+      if (this.identity.Apls[i].toString() === 'Bar') {
+        this.Bar = true;
+      }
+      if (this.identity.Apls[i].toString() === 'Lubricentro') {
+        this.Lubri = true;
+      }
+      if (this.identity.Apls[i].toString() === 'Drugstore') {
+        this.Drugstore = true;
+      }
+      if (this.identity.Apls[i].toString() === 'Estacion') {
+        this.Estacion = true;
+      }
+    }
+    }
+
   }
   logout() {
     localStorage.clear();

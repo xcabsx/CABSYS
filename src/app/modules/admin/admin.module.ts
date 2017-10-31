@@ -8,6 +8,7 @@ import { AdminRoutingModule} from './admin-routing.module';
 import { MainComponent} from './components/main/main.component';
 import { EditComponent} from './components/edit/edit.component';
 //import { AddComponent} from './components/add/add.component';
+import { AdminGuard} from "./service/admin.guard";
 import { ListComponent} from './components/list/list.component';
 import { RolListComponent} from './components/list/rol.list.component';
 import { UserListComponent} from './components/list/user.list.component';
@@ -23,6 +24,8 @@ import { SidebarComponent} from './components/main/sidebar';
 import { RolXUserComponent} from './components/add/Rol.x.User.component';
 import { UsuariosXRolListComponent} from './components/list/usuarios.x.rol.list.component';
 import { RolesXUsuariolListComponent} from './components/list/roles.x.usuariol.list.component';
+import {UserService} from "../../services/user.service";
+import { AplicacionListComponent} from "./components/list/aplicacion.list.component";
 
 
 @NgModule({
@@ -43,7 +46,8 @@ import { RolesXUsuariolListComponent} from './components/list/roles.x.usuariol.l
     SidebarComponent,
     RolXUserComponent,
     UsuariosXRolListComponent,
-    RolesXUsuariolListComponent
+    RolesXUsuariolListComponent,
+    AplicacionListComponent
   ],
   imports: [
     CommonModule,
@@ -52,7 +56,7 @@ import { RolesXUsuariolListComponent} from './components/list/roles.x.usuariol.l
     AdminRoutingModule,
     NgbModule
   ],
-  providers: []
+  providers: [AdminGuard, UserService]
 })
 
 export class AdminModule {}

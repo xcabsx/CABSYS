@@ -4,6 +4,7 @@ import { HttpModule} from '@angular/http';
 import { FormsModule} from '@angular/forms';
 import { routing, appRoutingProviders} from './app.routing';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { LoginGuard} from "./services/login.guard";
 
 
 import { AppComponent } from './app.component';
@@ -30,7 +31,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   ],
   entryComponents: [
     ],
-  providers: [appRoutingProviders],
+  providers: [appRoutingProviders, LoginGuard],
   imports: [
     BrowserModule,
     HttpModule,

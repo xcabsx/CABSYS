@@ -1,0 +1,52 @@
+<div class="col-lg-12">
+  <div class="loader" *ngIf="loading=='show'">
+    <img src="../../../../../assets/images/bike.gif" />
+
+  </div>
+<div class="col-lg-12" *ngIf="aplicaciones" [@fadein]>
+<h3>
+  {{title}}
+</h3>
+  <table class="table table-hover">
+    <thead class="thead-default">
+    <tr>
+        <th></th>
+        <th>Aplicaci&oacute;n</th>
+        <th>Estado</th>
+        <th>Roles</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let apl of aplicaciones">
+      <td>
+        <button data-toggle="tooltip" data-placement="top" title="Deshabilitar Rol" *ngIf="apl.estado === 'Activo'" class="btn btn-sm btn-danger  my-1" (click)="deshabilitarRol(rol.rolId)">
+          <span ><i class="fa fa-close"></i></span>
+
+        </button>
+        <button data-toggle="tooltip" data-placement="top" title="habilitar Rol" *ngIf="apl.estado === 'Inactivo'" class="btn btn-sm btn-info" (click)="deshabilitarRol(rol.rolId)">
+          <span ><i class="fa fa-check"></i></span>
+
+        </button>
+      </td>
+      <td>{{apl.descripcionApl}}</td>
+      <td>{{apl.estado}}</td>
+      <td>
+        <a class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="Ver Roles asignados a la Aplicacion" *ngIf="apl.estado === 'Activo'">
+          <span><i class="fa fa-eye"></i></span>
+        </a>
+
+        <button data-toggle="tooltip" data-placement="top" title="Agregar Roles a la Aplicaci&oacute;n" class="btn btn-sm btn-primary"  *ngIf="apl.estado === 'Activo'">
+          <span ><i class="fa fa-plus-circle"></i></span>
+
+        </button>
+
+      </td>
+
+
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+</div>

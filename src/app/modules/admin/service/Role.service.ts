@@ -88,6 +88,16 @@ export class RoleService {
     const headers = new Headers({'Content-Type' : 'application/x-www-form-urlencoded'});
     return this._http.post(this.url + '/perm/DelRol/' + idrol, params , {headers: headers}).map(res => res.json());
   }
+
+  getAplicaciones(token, pagina = null) {
+    const params = 'authorization=' + token;
+    const headers = new Headers({'Content-Type' : 'application/x-www-form-urlencoded'});
+    if (pagina == null) {
+      pagina = 1;
+    }
+    return this._http.post(this.url + '/perm/apls?page=' + pagina , params , {headers: headers}).map(res => res.json());
+
+  }
   /*
   deleteTask(token, id) {
     const params = 'authorization=' + token;

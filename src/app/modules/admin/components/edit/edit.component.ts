@@ -39,8 +39,8 @@ export class EditComponent implements OnInit {
         this.identity.name,
         this.identity.surname,
         this.identity.email,
-        this.identity.password
-        );
+        this.identity.password,
+        '');
     }
     console.log('user edit component');
 

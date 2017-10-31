@@ -90,6 +90,17 @@ export class UserService {
     const headers = new Headers({'Content-Type' : 'application/x-www-form-urlencoded'});
     return this._http.post(this.url + '/user/del/' + id, params , {headers: headers}).map(res => res.json());
   }
+
+  comprobarLogin(token) {
+    const params = 'authorization=' + token;
+    const headers = new Headers({'Content-Type' : 'application/x-www-form-urlencoded'});
+    return this._http.post(this.url + '/perm/control', params , {headers: headers}).map(res => res.json());
+  }
+  comprobarPermiso(token, permiso) {
+    const params = 'authorization=' + token+ '&pid=' + permiso;
+    const headers = new Headers({'Content-Type' : 'application/x-www-form-urlencoded'});
+    return this._http.post(this.url + '/perm/control', params , {headers: headers}).map(res => res.json());
+  }
 }
 
 

@@ -3,7 +3,7 @@ import { RouterModule, Routes} from '@angular/router';
 
 // componentes
 import { MainComponent} from './components/main/main.component';
-
+import { AdminGuard} from './service/admin.guard';
 
 import { ListComponent} from './components/list/list.component';
 import { RolListComponent} from './components/list/rol.list.component';
@@ -17,17 +17,19 @@ import { UserDetailsComponent} from './components/view/user.details.component';
 import { SidebarComponent} from "./components/main/sidebar";
 import { RolXUserComponent} from "./components/add/Rol.x.User.component";
 import { UsuariosXRolListComponent} from "./components/list/usuarios.x.rol.list.component";
+import {AplicacionListComponent} from "./components/list/aplicacion.list.component";
 
 const adminRoutes: Routes = [
   {
     path: 'admin-panel',
     component: SidebarComponent,
+    canActivate: [AdminGuard],
      children: [
        {path: '', redirectTo: 'admin-panel', pathMatch: 'full'},
       {path: 'listado', component: RolListComponent},
+      {path: 'apl-listado', component: AplicacionListComponent},
        {path: 'edit/:id', component: EditComponent},
       {path: 'listado-usuarios', component: UserListComponent},
-     // {path: 'crear', component: AddComponent},
       {path: 'crear-usuario', component: UserAddComponent},
       {path: 'crear-rol', component: RolAddComponent},
       {path: 'user-edit/:id', component: UserEdit1Component },

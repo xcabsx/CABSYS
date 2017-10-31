@@ -4,35 +4,19 @@
     <div class="col-md-3 col-xs-1 p-l-0 p-r-0  in" id="sidebar1">
       <h4>{{title}}</h4>
       <div class="list-group panel">
-        <a href="#menuUsuario" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar1" aria-expanded="false">
-          <i class="fa fa-user"></i>
-          <span class="hidden-sm-down">Usuarios</span>
-        </a>
-        <div class="collapse" id="menuUsuario">
-          <a class="list-group-item hovcolor" data-parent="#menu1" [routerLink]="['listado-usuarios']" [routerLinkActive]="['activado']">Lista de Usuarios</a>
-          <a href="#menu1sub1" class="list-group-item" data-toggle="collapse" aria-expanded="false">Operaciones </a>
-          <div class="collapse" id="menu1sub1">
-            <a class="list-group-item hovcolor" data-parent="#menu1sub1" [routerLink]="['crear-usuario']" [routerLinkActive]="['activado']">Nuevo Usuario</a>
+        <a [routerLink]="['listado-usuarios']" [routerLinkActive]="['activado']" class="list-group-item collapsed" data-parent="#sidebar1"><i class="fa fa-user "></i> <span class="hidden-sm-down">Usuarios</span></a>
+        <a [routerLink]="['listado']" [routerLinkActive]="['activado']" class="list-group-item collapsed" data-parent="#sidebar1"><i class="fa fa-list-alt"></i> <span class="hidden-sm-down">Roles</span></a>
+        <a [routerLink]="['apl-listado']" [routerLinkActive]="['activado']" class="list-group-item collapsed" data-parent="#sidebar1"><i class="fa fa-windows"></i> <span class="hidden-sm-down">Aplicaciones</span></a>
 
-          </div>
+        <a href="#menuops" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar1" aria-expanded="false">
+          <i class="fa fa-th-list"></i> <span class="hidden-sm-down">Altas</span>
+        </a>
+        <div class="collapse" id="menuops">
+          <a class="list-group-item hovcolor" [routerLink]="['crear-usuario']" [routerLinkActive]="['activado']">Nuevo Usuario <span><i class="fa fa-list"></i></span></a>
+          <a class="list-group-item hovcolor" [routerLink]="['crear-rol']" [routerLinkActive]="['activado']">Nuevoa Rol <span><i class="fa fa-list"></i></span></a>
+          <a class="list-group-item hovcolor" [routerLink]="['listado']" [routerLinkActive]="['activado']">Nuevo Permiso <span><i class="fa fa-list"></i></span></a>
 
         </div>
-        <a href="#menuRol" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar1" aria-expanded="false">
-          <i class="fa fa-th-list"></i> <span class="hidden-sm-down">Roles</span>
-        </a>
-
-        <div class="collapse" id="menuRol">
-          <a class="list-group-item hovcolor" [routerLink]="['listado']" [routerLinkActive]="['activado']">Lista de Roles <span><i class="fa fa-list"></i></span></a>
-
-          <a href="#menuRolsub1" class="list-group-item" data-toggle="collapse" aria-expanded="false">Operaciones </a>
-          <div class="collapse" id="menuRolsub1">
-            <a class="list-group-item hovcolor" data-parent="#menuRolsub1" [routerLink]="['crear-rol']" [routerLinkActive]="['activado']"><span><i class="fa fa-plus-circle"></i></span>   Crear Rol</a>
-
-          </div>
-         </div>
-
-
-        <a href="#" class="list-group-item collapsed" data-parent="#sidebar1"><i class="fa fa-star"></i> <span class="hidden-sm-down">Link</span></a>
       </div>
     </div>
     <main class="col-lg-9 ">

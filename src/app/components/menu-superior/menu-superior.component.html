@@ -13,15 +13,30 @@
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/inicio']"  [routerLinkActive]="['active']" >Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/animals']"  [routerLinkActive]="['active']" >Home <span class="sr-only">(current)</span></a>
+        <li class="nav-item" *ngIf="Bar">
+          <a class="nav-link" [routerLink]="['/animals']"  [routerLinkActive]="['active']" >Bar <span class="sr-only">(current)</span></a>
         </li>
-       <li class="nav-item">
+       <li class="nav-item" *ngIf="Lubri">
          <a class="nav-link"  [routerLink]="['/keepers']" [routerLinkActive]="['active']">
-           <span class="glyphicon glyphicon-filter" ></span>
-           Servicios
+           <span><i class="fa fa-filter"></i></span>
+           Lubricentro
          </a>
        </li>
+        <li class="nav-item" *ngIf="Drugstore">
+          <a class="nav-link"  [routerLink]="['/store']" [routerLinkActive]="['active']">
+            <span><i class="fa fa-amazon"></i></span>
+            Drugstore
+          </a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav navbar-right ml-auto  " *ngIf="!identity">
+        <li class="nav-item">
+          <a class="nav-link"  [routerLink]="['/login']" [routerLinkActive]="['active']">
+            <span><i class="fa fa-sign-in"></i></span>
+            Acceder
+          </a>
+        </li>
       </ul>
 
       <ul class="navbar-nav navbar-right ml-auto  " *ngIf="identity">

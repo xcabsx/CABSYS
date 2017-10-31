@@ -21,7 +21,7 @@ export class UserAddComponent implements OnInit {
     private _router: Router
   ) {
     this.title = 'Alta de Usuarios';
-    this.user = new User(1, 'user', '', '', '', '');
+    this.user = new User(1, 'user', '', '', '', '', '');
     /*this.user = {
       id: null ,
       name: '',
@@ -32,7 +32,7 @@ export class UserAddComponent implements OnInit {
     };*/
 
 
-  };
+  }
 
   public ngOnInit() {
     console.log('el componente ha sido cargado correctamente');
@@ -46,7 +46,7 @@ export class UserAddComponent implements OnInit {
         if ( response.status !== 'success') {
           this.status = 'Error';
         }else {
-          this.user = new User(1, 'user', '', '', '', '');
+          this.user = new User(1, 'user', '', '', '', '', '');
         }
 
       },error => {
