@@ -26,6 +26,8 @@ import { UsuariosXRolListComponent} from './components/list/usuarios.x.rol.list.
 import { RolesXUsuariolListComponent} from './components/list/roles.x.usuariol.list.component';
 import {UserService} from "../../services/user.service";
 import { AplicacionListComponent} from "./components/list/aplicacion.list.component";
+import {RolesXAplicacionListComponent} from "./components/list/roles.x.aplicacion.list.component";
+import {RolXAplicacionComponent} from "./components/add/Rol.x.Aplicacion.component";
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import { AplicacionListComponent} from "./components/list/aplicacion.list.compon
     RolXUserComponent,
     UsuariosXRolListComponent,
     RolesXUsuariolListComponent,
-    AplicacionListComponent
+    AplicacionListComponent,
+    RolesXAplicacionListComponent,
+    RolXAplicacionComponent
   ],
   imports: [
     CommonModule,

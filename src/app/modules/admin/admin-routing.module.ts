@@ -18,6 +18,8 @@ import { SidebarComponent} from "./components/main/sidebar";
 import { RolXUserComponent} from "./components/add/Rol.x.User.component";
 import { UsuariosXRolListComponent} from "./components/list/usuarios.x.rol.list.component";
 import {AplicacionListComponent} from "./components/list/aplicacion.list.component";
+import {RolesXAplicacionListComponent} from "./components/list/roles.x.aplicacion.list.component";
+import {RolXAplicacionComponent} from "./components/add/Rol.x.Aplicacion.component";
 
 const adminRoutes: Routes = [
   {
@@ -35,8 +37,10 @@ const adminRoutes: Routes = [
       {path: 'user-edit/:id', component: UserEdit1Component },
       {path: 'permiso-list/:id', component: PermisosListComponent },
       {path: 'uxr-list/:id', component: UsuariosXRolListComponent },
+      {path: 'rxa-list/:id', component: RolesXAplicacionListComponent },
       {path: 'user-detail/:id', component: UserDetailsComponent },
       {path: 'rol-asign/:id', component: RolXUserComponent },
+      {path: 'AxR-asign/:id', component: RolXAplicacionComponent },
       {path: '**', component: RolListComponent },
 
 

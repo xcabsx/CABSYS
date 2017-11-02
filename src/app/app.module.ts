@@ -14,6 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { AdminModule} from './modules/admin/admin.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {RolesXAplicacionListComponent} from "./modules/admin/components/list/roles.x.aplicacion.list.component";
 
 
 //import { SidebarComponent} from "./sidebar";
@@ -25,7 +26,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     MenuSuperiorComponent,
     LoginComponent,
-    UserEditComponent,
+    UserEditComponent
+
 
     //SidebarComponent
   ],

@@ -44,7 +44,7 @@ export class AplicacionListComponent implements OnInit {
     this._rolService.getAplicaciones(this.token).subscribe(
       response => {
         if (response.status === 'success') {
-          console.log('ok'+response.data);
+          console.log('ok'+ response.data);
           this.aplicaciones = response.data;
           this.loading = 'hide';
         }else {
@@ -57,17 +57,17 @@ export class AplicacionListComponent implements OnInit {
 
   }
 
-  /*deshabilitarRol(rolid) {
-      this._rolService.deshabilitarRol(this.token, rolid).subscribe(
+  deshabilitarAplicacion(aplid) {
+      this._rolService.deshabilitarAplicacion(this.token, aplid).subscribe(
         response => {
 
           if (response.status === 'success') {
             // podemos ver la tarea
-            this.rol = response.data;
+            this.aplicacion = response.data;
             //this._router.navigate(['/admin-panel/listado']);
             // this.loading = 'hide';
             console.log("ok habilitar");
-            this.getRoles();
+            this.getAplicaciones();
           }else {
             //aca va error
             console.log("error activar:" + response.status );
@@ -79,6 +79,6 @@ export class AplicacionListComponent implements OnInit {
         }
       );
 
-  }*/
+  }
 
 }

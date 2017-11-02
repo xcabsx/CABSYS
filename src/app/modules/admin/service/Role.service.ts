@@ -98,6 +98,39 @@ export class RoleService {
     return this._http.post(this.url + '/perm/apls?page=' + pagina , params , {headers: headers}).map(res => res.json());
 
   }
+
+  getRolessxaplicacion(token, id) {
+    const params = 'authorization=' + token;
+    const headers = new Headers({'Content-Type' : 'application/x-www-form-urlencoded'});
+    return this._http.post(this.url + '/perm/RxA/' + id, params , {headers: headers}).map(res => res.json());
+  }
+
+  getRolesxaplicaciones(token, id) {
+    const params = 'authorization=' + token;
+    const headers = new Headers({'Content-Type' : 'application/x-www-form-urlencoded'});
+    return this._http.post(this.url + '/perm/RxApl/' + id, params , {headers: headers}).map(res => res.json());
+  }
+
+  deshabilitarAplicacion(token, id) {
+    const params = 'authorization=' + token;
+    const headers = new Headers({'Content-Type' : 'application/x-www-form-urlencoded'});
+    return this._http.post(this.url + '/perm/DelApl/' + id, params , {headers: headers}).map(res => res.json());
+  }
+
+  saveRolesxapls(token, idapl, idrol) {
+    const Indata = {'rolid': idrol, 'aplid': idapl };
+
+    const params = 'json=' + JSON.stringify(Indata) + '&authorization=' + token;
+
+    const headers = new Headers({'Content-Type' : 'application/x-www-form-urlencoded'});
+    return this._http.post(this.url + '/perm/newRxApl', params , {headers: headers}).map(res => res.json());
+  }
+
+  deleteRolesxApls(token, idapl, idrol) {
+    const params = 'rId=' + idrol + '&authorization=' + token;
+    const headers = new Headers({'Content-Type' : 'application/x-www-form-urlencoded'});
+    return this._http.post(this.url + '/perm/DelApl/' + idapl, params , {headers: headers}).map(res => res.json());
+  }
   /*
   deleteTask(token, id) {
     const params = 'authorization=' + token;
