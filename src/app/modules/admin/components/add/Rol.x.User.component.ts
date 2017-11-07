@@ -25,6 +25,7 @@ export class RolXUserComponent implements OnInit {
   public rolActivo;
   public loadingRol;
 
+
   constructor(
     private _userService: UserService,
     private _rolService: RoleService,
@@ -37,33 +38,10 @@ export class RolXUserComponent implements OnInit {
     this.token = this._userService.getToken2();
     this.loading = 'show';
     this.loadingRol = 'hide';
-
-
   }
 
   ngOnInit() {
-    console.log('token ' + this.token);
-    //this.getUsers();
     this.getuserXRol();
-
-
-  }
-
-  getUsers() {
-    this._userService.getUsers(this.token).subscribe(
-      response => {
-        if (response.status === 'success') {
-          console.log('ok');
-          console.log(this.usersxRol);
-          this.users = response.data;
-          this.loading = 'hide';
-        }else {
-          console.log('error de peticion');
-        }
-      }, error =>{
-        console.log(<any>error);
-      }
-    );
 
   }
 
@@ -128,5 +106,6 @@ export class RolXUserComponent implements OnInit {
   volver() {
     window.history.back();
   }
+
 
 }

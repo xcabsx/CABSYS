@@ -14,7 +14,7 @@
           <a class="nav-link" [routerLink]="['/inicio']"  [routerLinkActive]="['active']" >Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item" *ngIf="Bar">
-          <a class="nav-link" [routerLink]="['/animals']"  [routerLinkActive]="['active']" >Bar <span class="sr-only">(current)</span></a>
+          <a class="nav-link" [routerLink]="['/bar-panel']"  [routerLinkActive]="['active']" >Bar <span class="sr-only">(current)</span></a>
         </li>
        <li class="nav-item" *ngIf="Lubri">
          <a class="nav-link"  [routerLink]="['/keepers']" [routerLinkActive]="['active']">
@@ -48,7 +48,7 @@
             <a class="dropdown-item" [routerLink]="['/user-edit']"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Mis Datos</a>
             <a class="dropdown-item" [routerLink]="['/admin-panel']"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Administrar</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" (click)="logout()"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Salir</a>
+            <a class="dropdown-item pointer" (click)="logout()"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Salir</a>
           </div>
         </li>
       </ul>

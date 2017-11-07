@@ -99,7 +99,7 @@ export class UserService {
   comprobarPermiso(token, permiso) {
     const params = 'authorization=' + token+ '&pid=' + permiso;
     const headers = new Headers({'Content-Type' : 'application/x-www-form-urlencoded'});
-    return this._http.post(this.url + '/perm/control', params , {headers: headers}).map(res => res.json());
+    return this._http.post(this.url + '/perm/contrperm', params , {headers: headers}).map(res => res.json());
   }
 }
 

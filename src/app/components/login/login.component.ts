@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from "../../services/user.service";
+import {UserService} from '../../services/user.service';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 
 @Component({
@@ -12,11 +12,13 @@ export class LoginComponent implements OnInit {
   public user;
   public identity;
   public token;
+  public loading;
 
   constructor(private _router: Router,
               private _route: ActivatedRoute,
               private _userService: UserService) {
     this.title = 'Identificate';
+    this.loading = 'hide';
     this.user = {
       'email': '',
       'password': '',
@@ -42,11 +44,13 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+    this.loading = 'show';
     this._userService.signup(this.user).subscribe(
       response => {
         this.identity = response;
         if (this.identity.length <= 1) {
           console.log('error en el servidor');
+          this.loading = 'hide';
         } else {
           if (!this.identity.status) {// no existe la variable status si es correcto
             localStorage.setItem('identity', JSON.stringify(this.identity));
@@ -57,9 +61,11 @@ export class LoginComponent implements OnInit {
                 this.token = response1;
                 if (this.token.length <= 1) {
                   console.log('error en el servidor');
+                  this.loading = 'hide';
                 } else {
                   if (!this.token.status) {// no existe la variable status si es correcto
                     localStorage.setItem('token', JSON.stringify(this.token));
+                    this.loading = 'hide';
                     this._router.navigate(['/home']);
                   }
                 }

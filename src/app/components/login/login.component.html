@@ -8,6 +8,7 @@
   </div>
 
 
+
   <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="col-md-7 no-padding" >
     <p>
       <label>Email</label>
@@ -22,5 +23,10 @@
     <p>
       <input type="submit" value="Entrar" class="btn btn-primary" [disabled]="!loginForm.form.valid" />
     </p>
+
+    <div class="loader " *ngIf="loading==='show'">
+      <img src="../../../assets/images/gearxs.gif" />
+    </div>
+
   </form>
 </div>

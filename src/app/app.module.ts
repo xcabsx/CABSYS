@@ -13,8 +13,9 @@ import { MenuSuperiorComponent } from './components/menu-superior/menu-superior.
 import { LoginComponent } from './components/login/login.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { AdminModule} from './modules/admin/admin.module';
+import { BarModule} from './modules/bar/bar.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {RolesXAplicacionListComponent} from "./modules/admin/components/list/roles.x.aplicacion.list.component";
+
 
 
 //import { SidebarComponent} from "./sidebar";
@@ -41,6 +42,7 @@ import {RolesXAplicacionListComponent} from "./modules/admin/components/list/rol
     routing,
     BrowserAnimationsModule,
     AdminModule,
+    BarModule,
     NgbModule.forRoot()
   ],
   bootstrap: [AppComponent]

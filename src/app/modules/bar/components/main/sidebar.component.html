@@ -1,0 +1,42 @@
+
+<div class="container-fluid" [@fadein]>
+<div class="d-flex flex-row ">
+    <div class="col-md-2 col-xs-1 sb" id="sidebar2">
+
+      <div class="list-group panel">
+        <a *ngIf="pedidos" [routerLink]="['listado-usuarios']" [routerLinkActive]="['activado']" class="list-group-item collapsed" data-parent="#sidebar2">
+          <i class="fa fa-cutlery "></i>
+          <span class="hidden-sm-down">Mesas</span>
+        </a>
+
+        <a *ngIf="pedidos" [routerLink]="['listado']" [routerLinkActive]="['activado']" class="list-group-item collapsed" data-parent="#sidebar2">
+          <i class="fa fa-shopping-cart"></i>
+          <span class="hidden-sm-down">Pedidos</span>
+        </a>
+
+        <a *ngIf="cocina" [routerLink]="['apl-listado']" [routerLinkActive]="['activado']" class="list-group-item collapsed" data-parent="#sidebar2">
+          <i class="fa fa-newspaper-o"></i>
+          <span class="hidden-sm-down">Menu</span>
+        </a>
+
+        <a *ngIf="administrar" href="#menuops" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar2" aria-expanded="false">
+          <i class="fa fa-th-list"></i> <span class="hidden-sm-down">Otras</span>
+        </a>
+        <div class="collapse" id="menuops">
+          <a class="list-group-item hovcolor" [routerLink]="['crear-usuario']" [routerLinkActive]="['activado']">Opciones <span><i class="fa fa-list"></i></span></a>
+          <a class="list-group-item hovcolor" [routerLink]="['crear-rol']" [routerLinkActive]="['activado']">Opcion 2 <span><i class="fa fa-list"></i></span></a>
+          <a class="list-group-item hovcolor" [routerLink]="['listado']" [routerLinkActive]="['activado']">Opcion 3 <span><i class="fa fa-list"></i></span></a>
+
+        </div>
+      </div>
+    </div>
+    <main class="col-lg-9 offset-3 ">
+
+    <router-outlet></router-outlet>
+
+    </main>
+  </div>
+</div>
+
+
+
