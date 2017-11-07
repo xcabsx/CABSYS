@@ -1,7 +1,7 @@
 
 <div class="container-fluid" [@fadein]>
-<div class="d-flex flex-row ">
-    <div class="col-md-2 col-xs-1 sb" id="sidebar2">
+
+    <div class="col-md-2 col-sm-2 sb" id="sidebar2">
 
       <div class="list-group panel">
         <a *ngIf="pedidos" [routerLink]="['listado-usuarios']" [routerLinkActive]="['activado']" class="list-group-item collapsed" data-parent="#sidebar2">
@@ -30,12 +30,12 @@
         </div>
       </div>
     </div>
-    <main class="col-lg-9 offset-3 ">
+    <main class="col-lg-9 offset-lg-3 offset-sm-0 offset-md-2  ">
 
     <router-outlet></router-outlet>
 
     </main>
-  </div>
+
 </div>
 
 
