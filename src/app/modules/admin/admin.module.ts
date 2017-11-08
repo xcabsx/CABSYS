@@ -8,6 +8,7 @@ import { AdminRoutingModule} from './admin-routing.module';
 import { MainComponent} from './components/main/main.component';
 import { EditComponent} from './components/edit/edit.component';
 //import { AddComponent} from './components/add/add.component';
+
 import { AdminGuard} from "./service/admin.guard";
 import { ListComponent} from './components/list/list.component';
 import { RolListComponent} from './components/list/rol.list.component';
@@ -16,18 +17,18 @@ import { UserEdit1Component} from './components/edit/user/user.editar.component'
 import { UserAddComponent} from './components/add/user.add.component';
 import { RolAddComponent} from './components/add/rol.add.component';
 import { PermisosListComponent} from './components/list/permisos.list.component';
+
 import { UserDetailsComponent} from './components/view/user.details.component';
-import { Tabs} from '../../components/tabs/tabs.component';
-import { Tab} from '../../components/tabs/tab.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { SidebarComponent} from './components/main/sidebar';
 import { RolXUserComponent} from './components/add/Rol.x.User.component';
 import { UsuariosXRolListComponent} from './components/list/usuarios.x.rol.list.component';
 import { RolesXUsuariolListComponent} from './components/list/roles.x.usuariol.list.component';
-import {UserService} from "../../services/user.service";
-import { AplicacionListComponent} from "./components/list/aplicacion.list.component";
-import {RolesXAplicacionListComponent} from "./components/list/roles.x.aplicacion.list.component";
-import {RolXAplicacionComponent} from "./components/add/Rol.x.Aplicacion.component";
+import {UserService} from '../../services/user.service';
+import { AplicacionListComponent} from './components/list/aplicacion.list.component';
+import {RolesXAplicacionListComponent} from './components/list/roles.x.aplicacion.list.component';
+import {RolXAplicacionComponent} from './components/add/Rol.x.Aplicacion.component';
 
 
 @NgModule({
@@ -43,8 +44,6 @@ import {RolXAplicacionComponent} from "./components/add/Rol.x.Aplicacion.compone
     RolAddComponent,
     PermisosListComponent,
     UserDetailsComponent,
-    Tabs,
-    Tab,
     SidebarComponent,
     RolXUserComponent,
     UsuariosXRolListComponent,

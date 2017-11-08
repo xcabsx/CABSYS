@@ -35,6 +35,7 @@ export class MenuSuperiorComponent implements OnInit, DoCheck {
     this.identity = this._userServices.getIdentity();
     this.token = this._userServices.getToken2();
     this.Bar = false;
+    this.Lubri = false;
     if (this.identity) {
     for (let i = 0 ; i < this.identity.Apls.length; i++) {
       if (this.identity.Apls[i].toString() === 'Bar') {

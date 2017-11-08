@@ -1,6 +1,6 @@
 <header id="header" xmlns="" xmlns="" xmlns="" xmlns="">
 
-  <nav class="navbar navbar-expand-lg  bg-primary fixed-top navtop">
+  <nav class="navbar navbar-expand-lg  bg-primary fixed-top navtop menu-superior">
     <a class="navbar-brand" [routerLink]="['/']">
       <img src="/../assets/images/terry.png"  id="logo">
     </a>
@@ -9,17 +9,34 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
+      <ul class="navbar-nav mr-auto main-menu">
+        <li class="nav-item ">
           <a class="nav-link" [routerLink]="['/inicio']"  [routerLinkActive]="['active']" >Home <span class="sr-only">(current)</span></a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/productos']"  [routerLinkActive]="['active']" >Productos <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/servicios']"  [routerLinkActive]="['active']" >Servicios <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/nosotros']"  [routerLinkActive]="['active']" >Nosotros <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/contacto']"  [routerLinkActive]="['active']" >Contacto <span class="sr-only">(current)</span></a>
+        </li>
         <li class="nav-item" *ngIf="Bar">
-          <a class="nav-link" [routerLink]="['/bar-panel']"  [routerLinkActive]="['active']" >Bar <span class="sr-only">(current)</span></a>
+          <a class="nav-link" [routerLink]="['/bar-panel']"  [routerLinkActive]="['active']" >
+            <span><i class="fa fa-glass"></i></span>
+            Bar
+            <span class="sr-only">(current)</span>
+          </a>
         </li>
        <li class="nav-item" *ngIf="Lubri">
-         <a class="nav-link"  [routerLink]="['/keepers']" [routerLinkActive]="['active']">
-           <span><i class="fa fa-filter"></i></span>
+         <a class="nav-link"  [routerLink]="['/lubri-panel']" [routerLinkActive]="['active']">
+           <span><i class="fa fa-car"></i></span>
            Lubricentro
+           <span class="sr-only">(current)</span>
          </a>
        </li>
         <li class="nav-item" *ngIf="Drugstore">

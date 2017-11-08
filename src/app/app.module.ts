@@ -4,21 +4,25 @@ import { HttpModule} from '@angular/http';
 import { FormsModule} from '@angular/forms';
 import { routing, appRoutingProviders} from './app.routing';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { LoginGuard} from "./services/login.guard";
-
+import { LoginGuard} from './services/login.guard';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { HomeComponent} from './components/home/home.component';
 import { MenuSuperiorComponent } from './components/menu-superior/menu-superior.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
+/* Modulo de Administracion*/
 import { AdminModule} from './modules/admin/admin.module';
+/*Modulo del Bar */
 import { BarModule} from './modules/bar/bar.module';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+/*Modulo de Lubricentro*/
 
-
-
-//import { SidebarComponent} from "./sidebar";
+import {LubricentroModule} from './modules/lubricentro/lubricentro.module';
+import { ProductosComponent} from './components/productos/productos.component';
+import { ServiciosComponent } from './components/servicios/servicios.component';
+import { NosotrosComponent } from './components/nosotros/nosotros.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 
 @NgModule({
@@ -27,10 +31,11 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     MenuSuperiorComponent,
     LoginComponent,
-    UserEditComponent
-
-
-    //SidebarComponent
+    UserEditComponent,
+    ProductosComponent,
+    ServiciosComponent,
+    NosotrosComponent,
+    ContactoComponent
   ],
   entryComponents: [
     ],
@@ -43,6 +48,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     BrowserAnimationsModule,
     AdminModule,
     BarModule,
+    LubricentroModule,
     NgbModule.forRoot()
   ],
   bootstrap: [AppComponent]

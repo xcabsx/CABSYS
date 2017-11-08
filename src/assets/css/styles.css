@@ -234,6 +234,36 @@
   color: white;
   background: #337ab7;
 }*/
+.menu-superior{
+  background-color: #21568e!important;
+  padding: 0 0 !important;
+}
+.main-menu li a.nav-link {
+  padding: 0 26px!important;
+  color: #fff!important;
+  font-size: 16px;
+  line-height: 70px;
+  /*display: table-cell;*/
+  vertical-align: middle;
+  height: 73px;
+  text-align: center;
+}
+
+.main-menu li a.nav-link:hover {
+
+  background-color: #a83673!important;
+  -webkit-transition: padding-right 2s ease;
+  transition: padding-right 2s ease;
+  /*display: table-cell;*/
+
+}
+
+
+
+
+.main-Menu li a.nav-link:hover {
+
+}
 
 /*#sidebar ul li.active > a, a[aria-expanded="true"] {
   color: #fff;
@@ -506,7 +536,7 @@ html, body, .container-fluid, .row {
 @media (min-width: 800px) {
   .sb {
     position: fixed;
-    top: 10%;
+    top: 12%;
     left: 0;
     bottom: 0;
     z-index: 1000;

@@ -14,6 +14,7 @@ export class BarsidebarComponent implements OnInit {
   public pedidos;
   public administrar;
   public cocina;
+  public identity;
 
   constructor(
     private _userservice: UserService
@@ -27,6 +28,7 @@ export class BarsidebarComponent implements OnInit {
   volver() {
     window.history.back();
   }
+
 
   ngOnInit() {
         if (this.identity) {
