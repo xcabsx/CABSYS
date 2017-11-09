@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   constructor(private _router: Router,
               private _route: ActivatedRoute,
               private _userService: UserService) {
-    this.title = 'Identificate';
+    this.title = 'Acceder';
     this.loading = 'hide';
     this.user = {
       'email': '',
@@ -75,6 +75,8 @@ export class LoginComponent implements OnInit {
             );
 
 
+          }else {
+            this.loading = 'hide';
           }
 
         }

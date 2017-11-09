@@ -1,5 +1,6 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
 #logo{
   height: 35px;
   margin-top: -10px;
@@ -90,14 +91,14 @@
 .navbar-nav .active{
   border-bottom: 3px solid orange!important;
 }
-.navbar-default .navbar-nav>li>a{
+/*.navbar-default .navbar-nav>li>a{
   transition: all 300ms;
   border-bottom: 3px solid transparent;
-}
-.navbar-default .navbar-nav>li>a:hover{
+}*/
+/*.navbar-default .navbar-nav>li>a:hover{
   transition: all 300ms;
   border-bottom: 3px solid orange;
-}
+}*/
 
 .boton_transiciones{
   padding: 10px;
@@ -242,10 +243,10 @@
   padding: 0 26px!important;
   color: #fff!important;
   font-size: 16px;
-  line-height: 70px;
+  line-height: 60px;
   /*display: table-cell;*/
   vertical-align: middle;
-  height: 73px;
+  height: 63px;
   text-align: center;
 }
 
@@ -347,7 +348,7 @@ a, a:hover, a:focus {
   margin: 40px 0;
 }
 body {
-  padding-top: 5rem;
+   padding-top: 5em;
 }
 
 /*
@@ -531,12 +532,12 @@ body {
 
 }
 html, body, .container-fluid, .row {
-  height: 100%;
+  height: 91%;
 }
 @media (min-width: 800px) {
   .sb {
     position: fixed;
-    top: 12%;
+    top: 9%;
     left: 0;
     bottom: 0;
     z-index: 1000;
@@ -560,6 +561,9 @@ html, body, .container-fluid, .row {
 
 #sidebar2 .list-group-item:not(.collapsed) {
   background-color: #222;
+}
+#sidebar2 .list-group-item:hover {
+  color: orange;
 }
 
 /* closed state */
@@ -656,4 +660,69 @@ main {
   max-height: 100%;
   overflow-y: auto;
 }
+*/
+
+header .mainMenu ul li .dropdown-menu {
+  background-color: #feffff;
+  border-radius: 0;
+  border: 0;
+  border-left: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
+  border-top: 1px solid #d9d9d9;
+
+  margin: -1px 0 0;
+  min-width: inherit;
+  padding: 0
+}
+
+header .mainMenu ul li .dropdown-menu  {
+  border-bottom: 1px solid #d9d9d9;
+  width: 90%
+}
+
+header .mainMenu ul li .dropdown-menu a {
+  color: #2c2928;
+  background: #f2f2f2;
+  border: none;
+  padding: 12px 10px;
+  width: 100%;
+  text-align:left;
+  text-indent: 0;
+}
+
+header .mainMenu ul li .dropdown-menu a.dropdown-item:hover { /*hover de menu de usuario*/
+  background: #cfccca
+}
+
+header .mainMenu ul li.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+header .mainMenu ul li.dropdown:hover>a.dropdown-toggle { /*color de fondo del usuario en el hover*/
+  background-color: #48a82c;
+  text-indent:2px;
+}
+
+#navbarDropdown  {
+  padding: 0 26px!important;
+  font-size: 16px;
+  line-height: 60px;
+  /*display: table-cell;*/
+  vertical-align: middle;
+  height: 63px;
+  text-align: center;
+}
+
+/*
+
+.main-menu li a.nav-link {
+  padding: 0 26px!important;
+  color: #fff!important;
+  font-size: 16px;
+  line-height: 70px;
+  vertical-align: middle;
+height: 73px;
+text-align: center;
+}
+
 */
