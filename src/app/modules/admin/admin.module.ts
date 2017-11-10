@@ -29,6 +29,7 @@ import {UserService} from '../../services/user.service';
 import { AplicacionListComponent} from './components/list/aplicacion.list.component';
 import {RolesXAplicacionListComponent} from './components/list/roles.x.aplicacion.list.component';
 import {RolXAplicacionComponent} from './components/add/Rol.x.Aplicacion.component';
+import {RolXPermisoComponent} from './components/add/Rol.x.Permiso.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import {RolXAplicacionComponent} from './components/add/Rol.x.Aplicacion.compone
     RolesXUsuariolListComponent,
     AplicacionListComponent,
     RolesXAplicacionListComponent,
-    RolXAplicacionComponent
+    RolXAplicacionComponent,
+    RolXPermisoComponent
   ],
   imports: [
     CommonModule,

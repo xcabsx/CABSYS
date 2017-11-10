@@ -53,7 +53,7 @@ export class RoleService {
   getPermisosxRol(token, id) {
     const params = 'authorization=' + token;
     const headers = new Headers({'Content-Type' : 'application/x-www-form-urlencoded'});
-    return this._http.post(this.url + '/perm/PxR/' + id, params , {headers: headers}).map(res => res.json());
+    return this._http.post(this.url + '/perm/PxR2/' + id, params , {headers: headers}).map(res => res.json());
   }
 
   getRolessxusuario(token, id) {
@@ -131,6 +131,23 @@ export class RoleService {
     const headers = new Headers({'Content-Type' : 'application/x-www-form-urlencoded'});
     return this._http.post(this.url + '/perm/DelApl/' + idapl, params , {headers: headers}).map(res => res.json());
   }
+
+  saveRolesxPermisos(token, idrol, idperm) {
+    const Indata = {'rolid': idrol, 'permid': idperm };
+
+    const params = 'json=' + JSON.stringify(Indata) + '&authorization=' + token;
+
+    const headers = new Headers({'Content-Type' : 'application/x-www-form-urlencoded'});
+    return this._http.post(this.url + '/perm/newPxR', params , {headers: headers}).map(res => res.json());
+  }
+
+  deleteRolesxPermisos(token, idrol, idpermiso) {
+    const params = 'permId=' + idpermiso + '&authorization=' + token;
+    const headers = new Headers({'Content-Type' : 'application/x-www-form-urlencoded'});
+    return this._http.post(this.url + '/perm/DelPerm/' + idrol, params , {headers: headers}).map(res => res.json());
+  }
+
+
   /*
   deleteTask(token, id) {
     const params = 'authorization=' + token;

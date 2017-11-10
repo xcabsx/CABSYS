@@ -3,6 +3,8 @@ export class Permiso {
     public id: string,
     public permiso: string,
     public estado: string,
+    public nombre: string,
+    public descripcion: string,
 
     ) { }
 }

@@ -3,18 +3,18 @@
 
     <div class="col-lg-2 col-md-3 col-sm-3 sb " id="sidebar2">
 
-      <div class="d-flex flex-wrap col-lg-12 p-0">
-        <a *ngIf="pedidos" [routerLink]="['listado-usuarios']" [routerLinkActive]="['activado']" class="list-group-item collapsed" data-parent="#sidebar2">
+      <div class="d-flex flex-wrap col-lg-12 p-0 divsb">
+        <a *ngIf="pedidos" [routerLink]="['listado-usuarios']" [routerLinkActive]="['activado']" class="list-group-item collapsed sbmenu " data-parent="#sidebar2">
           <i class="fa fa-cutlery "></i>
           <span class="hidden-sm-down">Mesas</span>
         </a>
 
-        <a *ngIf="pedidos" [routerLink]="['listado']" [routerLinkActive]="['activado']" class="list-group-item collapsed" data-parent="#sidebar2">
+        <a *ngIf="pedidos" [routerLink]="['listado']" [routerLinkActive]="['activado']" class="list-group-item collapsed sbmenu" data-parent="#sidebar2">
           <i class="fa fa-shopping-cart"></i>
           <span class="hidden-sm-down">Pedidos</span>
         </a>
 
-        <a *ngIf="cocina" [routerLink]="['apl-listado']" [routerLinkActive]="['activado']" class="list-group-item collapsed" data-parent="#sidebar2">
+        <a *ngIf="cocina" [routerLink]="['apl-listado']" [routerLinkActive]="['activado']" class="list-group-item collapsed sbmenu" data-parent="#sidebar2">
           <i class="fa fa-newspaper-o"></i>
           <span class="hidden-sm-down">Menu</span>
         </a>

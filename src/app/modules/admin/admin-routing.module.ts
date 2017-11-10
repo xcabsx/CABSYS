@@ -20,6 +20,7 @@ import { UsuariosXRolListComponent} from "./components/list/usuarios.x.rol.list.
 import {AplicacionListComponent} from "./components/list/aplicacion.list.component";
 import {RolesXAplicacionListComponent} from "./components/list/roles.x.aplicacion.list.component";
 import {RolXAplicacionComponent} from "./components/add/Rol.x.Aplicacion.component";
+import {RolXPermisoComponent} from "./components/add/Rol.x.Permiso.component";
 
 const adminRoutes: Routes = [
   {
@@ -38,6 +39,7 @@ const adminRoutes: Routes = [
       {path: 'permiso-list/:id', component: PermisosListComponent },
       {path: 'uxr-list/:id', component: UsuariosXRolListComponent },
       {path: 'rxa-list/:id', component: RolesXAplicacionListComponent },
+      {path: 'perm-asign/:id', component: RolXPermisoComponent },
       {path: 'user-detail/:id', component: UserDetailsComponent },
       {path: 'rol-asign/:id', component: RolXUserComponent },
       {path: 'AxR-asign/:id', component: RolXAplicacionComponent },

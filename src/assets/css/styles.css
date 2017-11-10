@@ -713,6 +713,12 @@ header .mainMenu ul li.dropdown:hover>a.dropdown-toggle { /*color de fondo del u
   text-align: center;
 }
 
+.sbmenu{
+
+}
+.divsb{
+  display: table!important;
+}
 /*
 
 .main-menu li a.nav-link {
