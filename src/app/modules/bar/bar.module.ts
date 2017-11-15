@@ -13,20 +13,27 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BarsidebarComponent} from './components/main/barsidebar';
 import {BarHomeComponent} from './components/bar.home';
 import {BarGuard} from "./service/bar.guard";
+import { PersonaListComponent} from './components/personas/persona.list.component';
+import { GenerateDatePipe} from "../../pipes/generate.date.pipe";
 
 
 @NgModule({
   declarations: [
    BarsidebarComponent,
-   BarHomeComponent
+   BarHomeComponent,
+   PersonaListComponent,
+    GenerateDatePipe
+
   ],
   imports: [
     CommonModule,
     FormsModule,
     HttpModule,
     BarRoutingModule,
-    NgbModule
+    NgbModule,
+
   ],
+  exports: [GenerateDatePipe],
   providers: [BarGuard]
 })
 

@@ -9,6 +9,7 @@ import { AdminGuard} from './service/admin.guard';
 import { LubricentroSidebarComponent} from './components/main/lubricentro.sidebar';
 import { LubricentroGuard} from './service/lubricentro.guard';
 import { LubricentroHomeComponent} from './components/lubricentro.home';
+import {ProveedoresHomeComponent} from './components/proveedores/proveedores.home.component';
 
 
 const LubricentroRoutes: Routes = [
@@ -19,6 +20,7 @@ const LubricentroRoutes: Routes = [
     children: [
       {path: '', redirectTo: 'lubri-home', pathMatch: 'full'},
       {path: 'lubri-home', component: LubricentroHomeComponent},
+      {path: 'prove-home', component: ProveedoresHomeComponent},
       {path: '**', component: LubricentroHomeComponent },
      ]
   }

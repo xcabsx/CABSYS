@@ -16,6 +16,7 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { AdminModule} from './modules/admin/admin.module';
 /*Modulo del Bar */
 import { BarModule} from './modules/bar/bar.module';
+
 /*Modulo de Lubricentro*/
 
 import {LubricentroModule} from './modules/lubricentro/lubricentro.module';
@@ -35,7 +36,8 @@ import { ContactoComponent } from './components/contacto/contacto.component';
     ProductosComponent,
     ServiciosComponent,
     NosotrosComponent,
-    ContactoComponent
+    ContactoComponent,
+
   ],
   entryComponents: [
     ],
@@ -51,6 +53,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
     LubricentroModule,
     NgbModule.forRoot()
   ],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,23 @@
+
+<div>
+  <table class="table table-striped">
+    <tr>
+      <th *ngIf="inom">Nombre</th>
+      <th *ngIf="iape">Apellido</th>
+      <th *ngIf="icuit">Cuit / Cuil</th>
+      <th *ngIf="idni">Dni </th>
+      <th *ngIf="ifn">Fecha de Nacimiento </th>
+      <th *ngIf="ifa">Fecha de Alta </th>
+
+    </tr>
+    <tr *ngFor="let persona of personas">
+      <td *ngIf="inom">{{persona.nombre}}</td>
+      <td *ngIf="iape">{{persona.apellido}}</td>
+      <td *ngIf="icuit">{{persona.cuilCuit}}</td>
+      <td *ngIf="idni">{{persona.dni}}</td>
+      <td *ngIf="ifn">{{persona.fechaNacimiento.timestamp | lubgenerateDate}}</td>
+      <td *ngIf="ifa">{{persona.fechaAlta.timestamp | lubgenerateDate}}</td>
+    </tr>
+  </table>
+</div>
+
